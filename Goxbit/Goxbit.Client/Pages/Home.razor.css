@@ -1,0 +1,34 @@
+﻿
+p {
+    text-align: justify;
+    /*text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;*/
+}
+#Profile {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0% 42%;
+    height:100%;
+    max-width: 400px;
+}
+
+#Present {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0% 42%;
+}
+
+#Name {
+    color: rgb(44, 42, 42);
+    font-family: "Madimi One", sans-serif;
+    font-style: normal;
+}
+
+
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.title{
+
+}

@@ -49,3 +49,29 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+.MainContent {
+    background: linear-gradient(158deg, #dec8fc, #a7f0ec);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 20s ease infinite;
+    animation: AnimationName 20s ease infinite;
+}
+
+#GoxBit {
+    color: rgb(44, 42, 42);
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:43% 0%}
+    50%{background-position:58% 100%}
+    100%{background-position:43% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:43% 0%}
+    50%{background-position:58% 100%}
+    100%{background-position:43% 0%}
+}

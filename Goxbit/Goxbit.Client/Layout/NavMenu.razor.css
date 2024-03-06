@@ -1,0 +1,18 @@
+#customNav {
+    background-color:rgb(0, 0, 0, 0.5);
+    
+}
+
+a:hover {
+    color: rgb(115, 93, 250);
+    opacity: 1;
+}
+
+a{
+    opacity:1;
+    color:white;
+}
+
+#GoxBit{
+    color:white;
+}
