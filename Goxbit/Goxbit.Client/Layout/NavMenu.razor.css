@@ -1,5 +1,5 @@
 #customNav {
-    background-color:rgb(0, 0, 0, 0.5);
+    background-color:rgb(0, 0, 0, 0.00);
     
 }
 
@@ -8,11 +8,20 @@ a:hover {
     opacity: 1;
 }
 
-a{
-    opacity:1;
-    color:white;
+a {
+    opacity: 1;
+    color: white;
+    font-weight: 900;
 }
 
 #GoxBit{
     color:white;
+}
+
+.btn{
+    background-color:rgb(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: rgb(0, 0, 0, 0.5);
 }
