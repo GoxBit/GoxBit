@@ -52,7 +52,7 @@ h1:focus {
 
 .MainContent, body {
     background: linear-gradient(158deg, #393342, #3e5e5c);
-    background-size: 400% 400%;
+    background-size: 200% 200%;
 
     -webkit-animation: AnimationName 20s ease infinite;
     animation: AnimationName 20s ease infinite;
