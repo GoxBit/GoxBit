@@ -1,7 +1,14 @@
 ﻿@page "/Models"
 
-<h3>Models</h3>
+<PageTitle>Models</PageTitle>
 
-@code {
-
-}
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <MudGrid Justify="Justify.Center">
+    @foreach (var item in Showcase)
+    {
+        <MudItem xs="4">
+            <Model Name="@item.Name" Url="@item.Url" Tool="3Max"></Model>
+        </MudItem>
+    }
+    </MudGrid>
+</MudContainer>
