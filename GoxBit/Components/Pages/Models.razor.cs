@@ -11,20 +11,8 @@ using System.Net.Http;
 
         protected override async Task OnInitializedAsync()
         {
-            var jsonFile = File.ReadAllText("wwwroot/Gx.json");
-            var Showcasess = JsonSerializer.Deserialize<Model>(jsonFile);
-
-            for (var i = 0; i<5; i++)
-           {
-                    this.Showcase.Add(
-                        new Model
-                        {
-                            Name = "Pato Cakes",
-                            Url = "https://sketchfab.com/models/a6663915cfd94cabaf49db66c1a27685/embed?autostart=1",
-                            Tool =  "3DS Max"
-                        }
-                     );
-           }
+            var jsonFile = File.ReadAllText("wwwroot/Models.json");
+            this.Showcase = JsonSerializer.Deserialize<List<Model>>(jsonFile);
         }
     }
 

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Pato Cakes",
+    "Url": "https://sketchfab.com/models/a6663915cfd94cabaf49db66c1a27685/embed?autostart=1",
+    "Tools": ["Max"]
+  },
+  {
+    "Name": "NES Joystick",
+    "Url": "https://sketchfab.com/models/e2ed5dc7eab44f049e5e5bfa9e622d8f/embed?autostart=1",
+    "Tools": [ "Max" ]
+  },
+  {
+    "Name": "Diorama",
+    "Url": "https://sketchfab.com/models/c02267a46aab4d89b40abdf599c9cbc8/embed?autostart=1",
+    "Tools": [ "Max","SubstancePainter" ]
+  }
+]

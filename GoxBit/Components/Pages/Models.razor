@@ -2,12 +2,12 @@
 
 <PageTitle>Models</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
     <MudGrid Justify="Justify.Center">
     @foreach (var item in Showcase)
     {
-        <MudItem xs="4">
-            <Model Name="@item.Name" Url="@item.Url" Tool="3Max"></Model>
+        <MudItem xs="4" ys>
+            <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
         </MudItem>
     }
     </MudGrid>

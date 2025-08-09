@@ -1,8 +1,15 @@
-﻿<MudCard>
+﻿@using GoxBit.Helpers;
+<MudCard>
     <MudCardHeader>
         <CardHeaderContent>
             <MudText Typo="Typo.body1">@Name</MudText>
-            <MudText Typo="Typo.body2">@Tool</MudText>
+            @foreach (var tool in Tools)
+            {
+                <MudChip T="string"
+                    Style="@($"color:{Colors.Gray.Lighten5}; background:{tool.ToBadgeColor()};")">
+                    @tool.ToString()
+                </MudChip>
+            }
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent>

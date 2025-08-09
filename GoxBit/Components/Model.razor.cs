@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System.Text.Json.Serialization;
 
 namespace GoxBit.Components
 {
@@ -9,6 +10,21 @@ namespace GoxBit.Components
         [Parameter]
         public string Url { get; set; }
         [Parameter]
-        public string Tool { get; set; }
+        public List<ToolType> Tools { get; set; }
     }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum ToolType
+    {
+        Maya,
+        Max,
+        ZBrush,
+        Unity,
+        UnrelEngine,
+        Blender,
+        SubstancePainter
+    }
+
+
+
 }
