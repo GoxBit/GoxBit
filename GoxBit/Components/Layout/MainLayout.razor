@@ -1,24 +1,13 @@
-﻿@inherits LayoutComponentBase
+﻿@using GoxBit.Shared
+@inherits LayoutComponentBase
 
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 <MudLayout>
-    <MudAppBar Fixed="true" Dense="false" Style="background:#1a1a27;" Elevation="0" Class="py-5">
-        <MudLink Href="/" Underline="Underline.None">GoxBit</MudLink>
-        <MudGrid Spacing="1" Justify="Justify.FlexEnd" >
-            <MudItem>
-                <MudNavLink Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
-            </MudItem>
-            <MudItem>
-                <MudNavLink Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
-            </MudItem>
-            <MudItem>
-                <MudNavLink Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
-            </MudItem>
-        </MudGrid>
-    </MudAppBar>
+    <Header>
+    </Header>
  
     <MudMainContent Class="mt-16 pa-4" >
         @Body

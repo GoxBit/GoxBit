@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using MudBlazor
+<MudAppBar Fixed="true" Dense="false" Style="background:url(../images/GoxBitWeb.png)" Elevation="0"Class="py5 header">
+        <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
+        <MudGrid Spacing="1" Justify="Justify.FlexEnd" >
+            <MudItem>
+                <MudNavLink Class="custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
+            </MudItem>
+            <MudItem>
+                <MudNavLink Class="custom-header-text" Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
+            </MudItem>
+            <MudItem>
+                <MudNavLink Class="custom-header-text" Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
+            </MudItem>
+        </MudGrid>
+    </MudAppBar>
+@code {
+
+}
+<style>
+    .custom-header-text{
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #0c0c0d !important;
+        list-style: none;
+    }
+
+    .header{
+        height: 106px;
+    }
+
+    .GoxBit{
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #0c0c0d !important;
+        list-style: none;
+    }
+</style>

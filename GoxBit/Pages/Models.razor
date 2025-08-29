@@ -1,0 +1,44 @@
+﻿@page "/Models"
+@using GoxBit.Components
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
+
+<PageTitle>Models</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+
+    <MudCarousel Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" style="width:100%;height:600px;">
+        <NextButtonTemplate>
+            <div>
+                <span>
+                    <MudIcon></MudIcon>
+                </span>
+            </div>
+        </NextButtonTemplate>
+        <ChildContent>
+            @foreach (var item in Showcase)
+        {
+            <MudCarouselItem Transition="@Transition.Fade">
+                <div class="d-flex flex-column flex-column justify-center" style="width:100%;height:600px;">
+                      <div class="sketchfab-embed-wrapper model-highlight"> <iframe title="@item.Name" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="@item.Url"></iframe> </div>
+                </div>
+            </MudCarouselItem>
+        }
+
+        </ChildContent>
+</MudCarousel>
+    <MudGrid Justify="Justify.Center">
+    @foreach (var item in Showcase)
+    {
+        <MudItem xs="4">
+            <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
+        </MudItem>
+    }
+    </MudGrid>
+</MudContainer>
+
+<style>
+    .model-highlight{
+        height:600px;
+    }
+</style>

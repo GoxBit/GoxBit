@@ -2,8 +2,9 @@
 using System.Text.Json;
 using System;
 using System.Net.Http;
+using GoxBit.Components;
 
- namespace GoxBit.Components.Pages
+namespace GoxBit.Pages
 {
     public partial class Models : ComponentBase
     {
@@ -12,7 +13,7 @@ using System.Net.Http;
         protected override async Task OnInitializedAsync()
         {
             var jsonFile = File.ReadAllText("wwwroot/Models.json");
-            this.Showcase = JsonSerializer.Deserialize<List<Model>>(jsonFile);
+            Showcase = JsonSerializer.Deserialize<List<Model>>(jsonFile);
         }
     }
 

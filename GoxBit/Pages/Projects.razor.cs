@@ -1,4 +1,4 @@
-namespace GoxBit.Components.Pages
+namespace GoxBit.Pages
 {
     public partial class Projects
     {
