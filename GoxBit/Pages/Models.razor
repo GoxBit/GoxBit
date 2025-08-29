@@ -37,19 +37,19 @@
 
 @if (!showAllModels)
     {
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="@ShowModels">Full Width Button</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="@ShowModels">Show all models</MudButton>
     }
 
 @if (showAllModels)
     {
-        <MudPaper Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
         @foreach (var item in Showcase)
             {
                 <MudPaper Width="34rem ">
                     <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
                                 </MudPaper>
             }
-        </MudPaper>
+        </div>
     }
     
 </MudContainer>
