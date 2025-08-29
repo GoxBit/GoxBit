@@ -9,12 +9,19 @@
 
     <MudCarousel Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" style="width:100%;height:600px;">
         <NextButtonTemplate>
-            <div>
-                <span>
-                    <MudIcon></MudIcon>
+            <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                <span class="mud-icon-button-label">
+                    <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipNext" Color="Color.Primary"/>
                 </span>
             </div>
         </NextButtonTemplate>
+        <PreviousButtonTemplate>
+        <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+            <span class="mud-icon-button-label">
+                <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipPrevious" Color="Color.Primary" />
+            </span>
+        </div>
+    </PreviousButtonTemplate>
         <ChildContent>
             @foreach (var item in Showcase)
         {
@@ -27,14 +34,24 @@
 
         </ChildContent>
 </MudCarousel>
-    <MudGrid Justify="Justify.Center">
-    @foreach (var item in Showcase)
+
+@if (!showAllModels)
     {
-        <MudItem xs="4">
-            <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
-        </MudItem>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="@ShowModels">Full Width Button</MudButton>
     }
-    </MudGrid>
+
+@if (showAllModels)
+    {
+        <MudPaper Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+        @foreach (var item in Showcase)
+            {
+                <MudPaper Width="34rem ">
+                    <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
+                                </MudPaper>
+            }
+        </MudPaper>
+    }
+    
 </MudContainer>
 
 <style>

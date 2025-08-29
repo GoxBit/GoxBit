@@ -12,10 +12,19 @@
             }
         </CardHeaderContent>
     </MudCardHeader>
-    <MudCardContent>
+    <MudCardContent Class="MudContent">
         <div class="sketchfab-embed-wrapper"> <iframe title="@Name" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="@Url"></iframe> </div>
     </MudCardContent>
 </MudCard>
 @code{
 
 }
+<style>
+    
+    .sketchfab-embed-wrapper{
+         height: 100%;
+    }
+    .MudContent{
+        height: 400px;
+    }
+</style>
