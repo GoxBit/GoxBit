@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 @using MudBlazor
-<MudAppBar Fixed="true" Dense="false" Style="background:url(../images/GoxBitWeb.png)" Elevation="0"Class="py5 header">
+<div Style="height:108px;">
+    <MudAppBar Fixed="true" Dense="false" Style="background-image:url(../images/GoxBitWeb.png)" Elevation="0"Class="py5 header">
         <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
         <MudGrid Spacing="1" Justify="Justify.FlexEnd" >
             <MudItem>
@@ -14,6 +15,8 @@
             </MudItem>
         </MudGrid>
     </MudAppBar>
+</div>
+
 @code {
 
 }
@@ -31,7 +34,10 @@
     }
 
     .header{
-        height: 106px;
+        height: auto;
+        background-color:transparent;
+        background-size: cover;
+        background-position: bottom center;
     }
 
     .GoxBit{
