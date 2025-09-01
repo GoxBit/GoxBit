@@ -9,19 +9,29 @@
 
         <MudGrid Class="py-20">
 
-            <MudFlexBreak></MudFlexBreak>
+            
             <MudItem xs="12" md="3" class="d-flex justify-center">
                 <MudImage Fluid="true" ObjectFit="ObjectFit.Cover" Src="images/profile.png" Alt="Mony the dog" Elevation="0" Class="rounded-lg" />
             </MudItem>
             <MudItem xs="12" md="9">
-                <MudText Typo="Typo.h4">
+                <MudHidden  Breakpoint="Breakpoint.SmAndUp" Invert="true">
+                    <MudText Typo="Typo.h4">
                     Hello!
                 </MudText>
                 <MudText Typo="Typo.h5" Align="Align.Justify">
                     I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
                 </MudText>
+                </MudHidden>
+                <MudHidden Breakpoint="Breakpoint.Xs" Invert="true">@* monitor *@
+                    <MudText Typo="Typo.h4">
+                    Hello!
+                </MudText>
+                <MudText Typo="Typo.body1" Align="Align.Justify">
+                    I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
+                </MudText>
+                </MudHidden>
+                
             </MudItem>
-            <MudFlexBreak></MudFlexBreak>
         </MudGrid>
     </MudContainer>
     <MudDivider />
@@ -44,7 +54,7 @@
 <br />
 <MudText Typo="Typo.h5" GutterBottom="true">Interactivity in this Template</MudText>
 <br />
-<MudText Typo="Typo.body2">
+<MudText  Typo="Typo.body2">
     When you opt for the "Global" Interactivity Location, <br />
     the render modes are defined in App.razor and consequently apply to all child components.<br />
     In this case, providers are globally set in the MainLayout.<br />
