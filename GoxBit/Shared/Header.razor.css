@@ -30,13 +30,11 @@
     list-style: none;
 }
 
-/* New layout styles to keep the nav centered and logo static */
 .header-wrapper {
     height: 108px;
 }
 
 .header-bar {
-    position: relative; /* required for absolute centering of .center-menu */
     display: flex;
     align-items: center;
     padding-left: 12px;
@@ -44,37 +42,38 @@
 }
 
 .logo {
-    z-index: 3; /* keep logo above centered menu */
+    z-index: 3;
 }
 
-/* Default: show center menu, hide mobile hamburger on larger screens */
+/* Navigation menu styles */
 .center-menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    width: auto;
-    pointer-events: auto;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .center-grid {
     display: flex;
     align-items: center;
     gap: 8px;
+    justify-content: flex-end;
 }
 
-/* Mobile menu wrapper - hidden by default on larger screens */
+/* Mobile menu styles */
 .mobile-menu {
-    margin-left: auto;
-    z-index: 4;
-    display: none;
+    display: flex;
     align-items: center;
+    z-index: 4;
 }
 
-/* keep the existing media queries if you want them as fallback,
-   but the MudHidden-driven rendering is now authoritative */
+.mobile-menu .hamburger-menu,
+.mobile-menu .mud-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive behavior handled by MudBlazor's MudHidden */
 @media (max-width: 768px) {
     .center-menu {
         display: none;
@@ -82,13 +81,6 @@
 
     .mobile-menu {
         display: flex;
-    }
-
-    .mobile-menu .hamburger-menu,
-    .mobile-menu .mud-icon-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 
