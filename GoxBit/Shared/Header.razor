@@ -1,54 +1,44 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 @using MudBlazor
-<div Style="height:108px;">
-    <MudAppBar Fixed="true" Dense="false" Style="background-image:url(../images/GoxBitWeb.png)" Elevation="0"Class="py5 header">
-        <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
-        <MudGrid Spacing="1" Justify="Justify.FlexEnd" >
-            <MudItem>
-                <MudNavLink Class="custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
-            </MudItem>
-            <MudItem>
-                <MudNavLink Class="custom-header-text" Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
-            </MudItem>
-            <MudItem>
-                <MudNavLink Class="custom-header-text" Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
-            </MudItem>
-        </MudGrid>
+@inject NavigationManager NavigationManager
+
+<div class="header-wrapper">
+    <MudAppBar Fixed="true" Dense="false" Style="background-image:url(../images/GoxBitWeb.png)" Elevation="0" Class="py5 header header-bar">
+        <!-- Left: Logo (kept untouched) -->
+        <div class="logo">
+            <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
+        </div>
+
+        <!-- Center: main navigation — visible on medium and larger screens -->
+        <MudHidden Breakpoint="Breakpoint.SmAndDown">
+            <div class="center-menu" role="navigation" aria-label="Primary navigation">
+                <MudGrid Spacing="1" Justify="Justify.Center" AlignItems="AlignItems.Center" Class="center-grid">
+                    <MudItem>
+                        <MudNavLink Class="custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
+                    </MudItem>
+                    <MudItem>
+                        <MudNavLink Class="custom-header-text" Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
+                    </MudItem>
+                    <MudItem>
+                        <MudNavLink Class="custom-header-text" Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
+                    </MudItem>
+                </MudGrid>
+            </div>
+        </MudHidden>
+
+        <!-- Right: hamburger for small screens -->
+        <MudHidden Breakpoint="Breakpoint.MdAndUp">
+            <div class="mobile-menu" aria-hidden="false">
+                <MudMenu Class="hamburger-menu" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" AriaLabel="Open navigation menu">
+                    <MudMenuItem OnClick='() => NavigateTo("/Projects")'>Projects</MudMenuItem>
+                    <MudMenuItem OnClick='() => NavigateTo("/Models")'>Models</MudMenuItem>
+                    <MudMenuItem OnClick='() => NavigateTo("/Background")'>Background</MudMenuItem>
+                </MudMenu>
+            </div>
+        </MudHidden>
     </MudAppBar>
 </div>
 
 @code {
-
+    private void NavigateTo(string uri) => NavigationManager.NavigateTo(uri);
 }
-<style>
-    .custom-header-text{
-        font-family: 'Orbitron', sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 10px 20px;
-        color: #0c0c0d !important;
-        list-style: none;
-    }
-
-    .header{
-        height: auto;
-        background-color:transparent;
-        background-size: cover;
-        background-position: bottom center;
-    }
-
-    .GoxBit{
-        font-family: 'Orbitron', sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 10px 20px;
-        color: #0c0c0d !important;
-        list-style: none;
-    }
-</style>
