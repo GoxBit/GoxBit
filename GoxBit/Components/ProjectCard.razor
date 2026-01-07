@@ -1,6 +1,7 @@
 @using MudBlazor
+@inject NavigationManager Navigation
 
-<MudCard Class="project-card">
+<MudCard Class="project-card" @onclick="OnCardClick">
     <MudCardMedia Image="@Image" Height="200" />
     <MudCardContent>
         <MudText Typo="Typo.h5" Class="project-card-title">@Name</MudText>
@@ -17,4 +18,9 @@
 
     [Parameter]
     public string ShortDescription { get; set; } = string.Empty;
+
+    private void OnCardClick()
+    {
+        Navigation.NavigateTo($"/Projects/{Name}");
+    }
 }

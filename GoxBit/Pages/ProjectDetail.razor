@@ -1,0 +1,58 @@
+@page "/Projects/{Name}"
+@using System.Text.Json
+@using GoxBit.Pages
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
+
+<PageTitle>@ProjectName</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+    <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
+        Back to Projects
+    </MudButton>
+
+    @if (project == null)
+    {
+        <MudText Typo="Typo.h6" Color="Color.Error">Project not found</MudText>
+    }
+    else
+    {
+        <div Class="project-detail-container mt-6">
+            <div Class="project-detail-header">
+                <MudText Typo="Typo.h3" Class="mb-4">@project.Name</MudText>
+                <img src="@project.Image" alt="@project.Name" class="project-detail-image" />
+            </div>
+
+            <div Class="project-detail-content mt-6">
+                <MudPaper Class="pa-6">
+                    <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
+                    <MudText Typo="Typo.body1">@project.ShortDescription</MudText>
+                </MudPaper>
+            </div>
+        </div>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    private ProjectData project;
+    private string ProjectName => project?.Name ?? "Project";
+
+    protected override void OnInitialized()
+    {
+        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
+        var allProjects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+        
+        // Buscar el proyecto por nombre
+        project = allProjects?.FirstOrDefault(p => p.Name.Equals(Name, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public class ProjectData
+    {
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public string ShortDescription { get; set; }
+    }
+}
