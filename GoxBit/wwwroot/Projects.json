@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "FinTrack",
+    "DisplayName": "Fin Track",
+    "Image": "images/1080Test.png",
+    "ShortDescription": "Aplicaci�n para seguimiento y an�lisis de gastos personales.",
+    "LongDescription": "FinTrack es una aplicaci�n completa para el seguimiento y an�lisis detallado de tus gastos personales. Con una interfaz intuitiva y herramientas poderosas, puedes registrar cada transacci�n, categorizarlas autom�ticamente y generar reportes visuales que te ayudan a entender tus patrones de gasto. Caracter�sticas incluyen presupuestos personalizados, alertas de gastos, gr�ficos de tendencias mensuales y anuales, y exportaci�n de datos en m�ltiples formatos. Ideal para usuarios que desean tomar control total de sus finanzas personales."
+  },
+  {
+    "Name": "PhotoGallery",
+    "DisplayName": "Photo Gallery",
+    "Image": "images/1080Test.png",
+    "ShortDescription": "Galer�a de im�genes con filtros, categor�as y b�squeda.",
+    "LongDescription": "PhotoGallery es una galer�a de im�genes moderna y potente dise�ada para organizar, visualizar y compartir tu colecci�n fotogr�fica. Ofrece filtros avanzados para b�squedas r�pidas por fecha, ubicaci�n o etiquetas personalizadas, categorizaci�n autom�tica de fotos y organizaci�n por �lbumes. La aplicaci�n incluye herramientas de edici�n b�sica, vista previa en galer�a, modo presentaci�n autom�tica y opciones de compartir en redes sociales. Con soporte para m�ltiples formatos de imagen y sincronizaci�n en la nube, es perfecta para fot�grafos y entusiastas que buscan una soluci�n profesional."
+  },
+  {
+    "Name": "TaskMaster",
+    "DisplayName": "Task Master",
+    "Image": "images/1080Test.png",
+    "ShortDescription": "Gestor de tareas con prioridades, etiquetas y recordatorios.",
+    "LongDescription": "TaskMaster es un gestor de tareas completo que te ayuda a organizar y realizar un seguimiento de tus proyectos y actividades diarias. Asigna prioridades, crea etiquetas personalizadas y establece recordatorios autom�ticos para no olvidar nunca una tarea importante. Caracter�sticas incluyen lista de tareas jer�rquica, fechas de vencimiento, asignaci�n de responsables, colaboraci�n en equipo, seguimiento de progreso con gr�ficos visuales y exportaci�n de reportes. Ideal para profesionales y equipos que buscan mejorar su productividad y gesti�n del tiempo."
+  },
+  {
+    "Name": "WeatherNow",
+    "DisplayName": "Weather Now Master Pro Long Name Test",
+    "Image": "images/1080Test.png",
+    "ShortDescription": "Aplicaci�n meteorol�gica con pron�sticos en tiempo real y alertas.",
+    "LongDescription": "WeatherNow es una aplicaci�n meteorol�gica inteligente que proporciona pron�sticos precisos en tiempo real para tu ubicaci�n. Recibe alertas instant�neas sobre condiciones clim�ticas severas, cambios de temperatura y eventos meteorol�gicos importantes. La aplicaci�n incluye datos detallados por hora, pron�sticos extendidos a 14 d�as, mapas interactivos de radar, �ndice UV, calidad del aire y velocidad del viento. Con interfaz intuitiva, soporte para m�ltiples ubicaciones y actualizaciones autom�ticas, WeatherNow es tu compa�ero perfecto para planificar tu d�a."
+  }
+]

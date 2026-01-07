@@ -4,15 +4,17 @@
 
 <div class="header-wrapper">
     <MudAppBar Fixed="true" Dense="false" Style="background-image:url(../images/GoxBitWeb.png)" Elevation="0" Class="py5 header header-bar">
-        <!-- Left: Logo (kept untouched) -->
+        <!-- Left: Logo -->
         <div class="logo">
             <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
         </div>
 
-        <!-- Center: main navigation — visible on medium and larger screens -->
+        <MudSpacer />
+
+        <!-- Center/Right: main navigation — visible on medium and larger screens -->
         <MudHidden Breakpoint="Breakpoint.SmAndDown">
             <div class="center-menu" role="navigation" aria-label="Primary navigation">
-                <MudGrid Spacing="1" Justify="Justify.Center" AlignItems="AlignItems.Center" Class="center-grid">
+                <MudGrid Spacing="1" Justify="Justify.FlexEnd" AlignItems="AlignItems.Center" Class="center-grid">
                     <MudItem>
                         <MudNavLink Class="custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
                     </MudItem>
@@ -28,8 +30,13 @@
 
         <!-- Right: hamburger for small screens -->
         <MudHidden Breakpoint="Breakpoint.MdAndUp">
-            <div class="mobile-menu" aria-hidden="false">
-                <MudMenu Class="hamburger-menu" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" AriaLabel="Open navigation menu">
+            <div class="mobile-menu">
+                <MudMenu Class="hamburger-menu" 
+                        Icon="@Icons.Material.Filled.Menu" 
+                        Color="Color.Inherit" 
+                        AnchorOrigin="Origin.BottomRight"
+                        TransformOrigin="Origin.TopRight"
+                        AriaLabel="Open navigation menu">
                     <MudMenuItem OnClick='() => NavigateTo("/Projects")'>Projects</MudMenuItem>
                     <MudMenuItem OnClick='() => NavigateTo("/Models")'>Models</MudMenuItem>
                     <MudMenuItem OnClick='() => NavigateTo("/Background")'>Background</MudMenuItem>
