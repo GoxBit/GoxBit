@@ -1,0 +1,20 @@
+@using MudBlazor
+
+<MudCard Class="project-card">
+    <MudCardMedia Image="@Image" Height="200" />
+    <MudCardContent>
+        <MudText Typo="Typo.h5" Class="project-card-title">@Name</MudText>
+        <MudText Typo="Typo.body2" Class="project-card-description">@ShortDescription</MudText>
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Image { get; set; } = string.Empty;
+
+    [Parameter]
+    public string ShortDescription { get; set; } = string.Empty;
+}

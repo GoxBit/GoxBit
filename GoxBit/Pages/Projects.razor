@@ -1,5 +1,38 @@
 ﻿@page "/Projects"
+@using System.Text.Json
+@using GoxBit.Components
+@using GoxBit.Pages
 
-<h3>Projects</h3>
+<h1>Projects</h1>
 
+@if (projects == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="projects-grid">
+        @foreach (var project in projects)
+        {
+            <ProjectCard Name="@project.Name" Image="@project.Image" ShortDescription="@project.ShortDescription" />
+        }
+    </div>
+}
+
+@code {
+    private List<ProjectData> projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
+        projects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+    }
+
+    public class ProjectData
+    {
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public string ShortDescription { get; set; }
+    }
+}
 
