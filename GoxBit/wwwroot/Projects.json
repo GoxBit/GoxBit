@@ -3,28 +3,28 @@
     "Name": "FinTrack",
     "DisplayName": "Fin Track",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Aplicación para seguimiento y análisis de gastos personales.",
-    "LongDescription": "FinTrack es una aplicación completa para el seguimiento y análisis detallado de tus gastos personales. Con una interfaz intuitiva y herramientas poderosas, puedes registrar cada transacción, categorizarlas automáticamente y generar reportes visuales que te ayudan a entender tus patrones de gasto. Características incluyen presupuestos personalizados, alertas de gastos, gráficos de tendencias mensuales y anuales, y exportación de datos en múltiples formatos. Ideal para usuarios que desean tomar control total de sus finanzas personales."
+    "ShortDescription": "Aplicaciï¿½n para seguimiento y anï¿½lisis de gastos personales.",
+    "LongDescription": "FinTrack es una aplicaciï¿½n completa para el seguimiento y anï¿½lisis detallado de tus gastos personales. Con una interfaz intuitiva y herramientas poderosas, puedes registrar cada transacciï¿½n, categorizarlas automï¿½ticamente y generar reportes visuales que te ayudan a entender tus patrones de gasto. Caracterï¿½sticas incluyen presupuestos personalizados, alertas de gastos, grï¿½ficos de tendencias mensuales y anuales, y exportaciï¿½n de datos en mï¿½ltiples formatos. Ideal para usuarios que desean tomar control total de sus finanzas personales."
   },
   {
     "Name": "PhotoGallery",
     "DisplayName": "Photo Gallery",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Galería de imágenes con filtros, categorías y búsqueda.",
-    "LongDescription": "PhotoGallery es una galería de imágenes moderna y potente diseñada para organizar, visualizar y compartir tu colección fotográfica. Ofrece filtros avanzados para búsquedas rápidas por fecha, ubicación o etiquetas personalizadas, categorización automática de fotos y organización por álbumes. La aplicación incluye herramientas de edición básica, vista previa en galería, modo presentación automática y opciones de compartir en redes sociales. Con soporte para múltiples formatos de imagen y sincronización en la nube, es perfecta para fotógrafos y entusiastas que buscan una solución profesional."
+    "ShortDescription": "Galerï¿½a de imï¿½genes con filtros, categorï¿½as y bï¿½squeda.",
+    "LongDescription": "PhotoGallery es una galerï¿½a de imï¿½genes moderna y potente diseï¿½ada para organizar, visualizar y compartir tu colecciï¿½n fotogrï¿½fica. Ofrece filtros avanzados para bï¿½squedas rï¿½pidas por fecha, ubicaciï¿½n o etiquetas personalizadas, categorizaciï¿½n automï¿½tica de fotos y organizaciï¿½n por ï¿½lbumes. La aplicaciï¿½n incluye herramientas de ediciï¿½n bï¿½sica, vista previa en galerï¿½a, modo presentaciï¿½n automï¿½tica y opciones de compartir en redes sociales. Con soporte para mï¿½ltiples formatos de imagen y sincronizaciï¿½n en la nube, es perfecta para fotï¿½grafos y entusiastas que buscan una soluciï¿½n profesional."
   },
   {
     "Name": "TaskMaster",
     "DisplayName": "Task Master",
     "Image": "images/1080Test.png",
     "ShortDescription": "Gestor de tareas con prioridades, etiquetas y recordatorios.",
-    "LongDescription": "TaskMaster es un gestor de tareas completo que te ayuda a organizar y realizar un seguimiento de tus proyectos y actividades diarias. Asigna prioridades, crea etiquetas personalizadas y establece recordatorios automáticos para no olvidar nunca una tarea importante. Características incluyen lista de tareas jerárquica, fechas de vencimiento, asignación de responsables, colaboración en equipo, seguimiento de progreso con gráficos visuales y exportación de reportes. Ideal para profesionales y equipos que buscan mejorar su productividad y gestión del tiempo."
+    "LongDescription": "TaskMaster es un gestor de tareas completo que te ayuda a organizar y realizar un seguimiento de tus proyectos y actividades diarias. Asigna prioridades, crea etiquetas personalizadas y establece recordatorios automï¿½ticos para no olvidar nunca una tarea importante. Caracterï¿½sticas incluyen lista de tareas jerï¿½rquica, fechas de vencimiento, asignaciï¿½n de responsables, colaboraciï¿½n en equipo, seguimiento de progreso con grï¿½ficos visuales y exportaciï¿½n de reportes. Ideal para profesionales y equipos que buscan mejorar su productividad y gestiï¿½n del tiempo."
   },
   {
     "Name": "WeatherNow",
-    "DisplayName": "Weather Now",
+    "DisplayName": "Weather Now Master Pro Long Name Test",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Aplicación meteorológica con pronósticos en tiempo real y alertas.",
-    "LongDescription": "WeatherNow es una aplicación meteorológica inteligente que proporciona pronósticos precisos en tiempo real para tu ubicación. Recibe alertas instantáneas sobre condiciones climáticas severas, cambios de temperatura y eventos meteorológicos importantes. La aplicación incluye datos detallados por hora, pronósticos extendidos a 14 días, mapas interactivos de radar, índice UV, calidad del aire y velocidad del viento. Con interfaz intuitiva, soporte para múltiples ubicaciones y actualizaciones automáticas, WeatherNow es tu compañero perfecto para planificar tu día."
+    "ShortDescription": "Aplicaciï¿½n meteorolï¿½gica con pronï¿½sticos en tiempo real y alertas.",
+    "LongDescription": "WeatherNow es una aplicaciï¿½n meteorolï¿½gica inteligente que proporciona pronï¿½sticos precisos en tiempo real para tu ubicaciï¿½n. Recibe alertas instantï¿½neas sobre condiciones climï¿½ticas severas, cambios de temperatura y eventos meteorolï¿½gicos importantes. La aplicaciï¿½n incluye datos detallados por hora, pronï¿½sticos extendidos a 14 dï¿½as, mapas interactivos de radar, ï¿½ndice UV, calidad del aire y velocidad del viento. Con interfaz intuitiva, soporte para mï¿½ltiples ubicaciones y actualizaciones automï¿½ticas, WeatherNow es tu compaï¿½ero perfecto para planificar tu dï¿½a."
   }
 ]
