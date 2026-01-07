@@ -1,0 +1,21 @@
+.project-card-container {
+    width: 280px;
+}
+
+@media (max-width: 1200px) {
+    .project-card-container {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card-container {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card-container {
+        width: 100%;
+    }
+}
