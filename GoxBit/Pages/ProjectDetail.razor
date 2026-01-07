@@ -1,0 +1,132 @@
+@page "/Projects/{Name}"
+@using System.Text.Json
+@using GoxBit.Pages
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
+
+<PageTitle>@ProjectName</PageTitle>
+
+<style>
+    .project-hero-section {
+        background-color: #ffffff00;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .project-hero-header {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .project-image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .project-hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        display: block;
+    }
+
+    .project-title-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), transparent);
+        padding: 40px 20px 20px 20px;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        max-height: 150px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .project-title-text {
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        word-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        line-height: 1.2;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+</style>
+
+@if (project == null)
+{
+    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+        <MudText Typo="Typo.h6" Color="Color.Error">Project not found</MudText>
+    </MudContainer>
+}
+else
+{
+    <div class="project-hero-section">
+        <div class="project-hero-header">
+            <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
+                Back to Projects
+            </MudButton>
+        </div>
+
+        <div class="project-image-wrapper">
+            <img src="@project.Image" alt="@project.Name" class="project-hero-image" />
+            <div class="project-title-overlay">
+                <div class="project-title-text">
+                    @project.DisplayName
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-8">
+        <MudPaper Class="pa-6">
+            <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
+            <MudText Typo="Typo.body1">@project.LongDescription</MudText>
+        </MudPaper>
+    </MudContainer>
+}
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    private ProjectData project;
+    private string ProjectName => project?.Name ?? "Project";
+
+    protected override void OnInitialized()
+    {
+        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
+        var allProjects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+
+        // Buscar el proyecto por nombre
+        project = allProjects?.FirstOrDefault(p => p.Name.Equals(Name, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public class ProjectData
+    {
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+        public string Image { get; set; }
+        public string ShortDescription { get; set; }
+        public string LongDescription { get; set; }
+    }
+}
