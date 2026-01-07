@@ -3,24 +3,28 @@
     "Name": "FinTrack",
     "DisplayName": "Fin Track",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Aplicaciï¿½n para seguimiento y anï¿½lisis de gastos personales."
+    "ShortDescription": "Aplicación para seguimiento y análisis de gastos personales.",
+    "LongDescription": "FinTrack es una aplicación completa para el seguimiento y análisis detallado de tus gastos personales. Con una interfaz intuitiva y herramientas poderosas, puedes registrar cada transacción, categorizarlas automáticamente y generar reportes visuales que te ayudan a entender tus patrones de gasto. Características incluyen presupuestos personalizados, alertas de gastos, gráficos de tendencias mensuales y anuales, y exportación de datos en múltiples formatos. Ideal para usuarios que desean tomar control total de sus finanzas personales."
   },
   {
     "Name": "PhotoGallery",
     "DisplayName": "Photo Gallery",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Galerï¿½a de imï¿½genes con filtros, categorï¿½as y bï¿½squeda."
+    "ShortDescription": "Galería de imágenes con filtros, categorías y búsqueda.",
+    "LongDescription": "PhotoGallery es una galería de imágenes moderna y potente diseñada para organizar, visualizar y compartir tu colección fotográfica. Ofrece filtros avanzados para búsquedas rápidas por fecha, ubicación o etiquetas personalizadas, categorización automática de fotos y organización por álbumes. La aplicación incluye herramientas de edición básica, vista previa en galería, modo presentación automática y opciones de compartir en redes sociales. Con soporte para múltiples formatos de imagen y sincronización en la nube, es perfecta para fotógrafos y entusiastas que buscan una solución profesional."
   },
   {
     "Name": "TaskMaster",
     "DisplayName": "Task Master",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Gestor de tareas con prioridades, etiquetas y recordatorios."
+    "ShortDescription": "Gestor de tareas con prioridades, etiquetas y recordatorios.",
+    "LongDescription": "TaskMaster es un gestor de tareas completo que te ayuda a organizar y realizar un seguimiento de tus proyectos y actividades diarias. Asigna prioridades, crea etiquetas personalizadas y establece recordatorios automáticos para no olvidar nunca una tarea importante. Características incluyen lista de tareas jerárquica, fechas de vencimiento, asignación de responsables, colaboración en equipo, seguimiento de progreso con gráficos visuales y exportación de reportes. Ideal para profesionales y equipos que buscan mejorar su productividad y gestión del tiempo."
   },
   {
     "Name": "WeatherNow",
-    "DisplayName": "Weather Now Multiple Report Shooter Master",
+    "DisplayName": "Weather Now",
     "Image": "images/1080Test.png",
-    "ShortDescription": "Aplicaciï¿½n meteorolï¿½gica con pronï¿½sticos en tiempo real y alertas."
+    "ShortDescription": "Aplicación meteorológica con pronósticos en tiempo real y alertas.",
+    "LongDescription": "WeatherNow es una aplicación meteorológica inteligente que proporciona pronósticos precisos en tiempo real para tu ubicación. Recibe alertas instantáneas sobre condiciones climáticas severas, cambios de temperatura y eventos meteorológicos importantes. La aplicación incluye datos detallados por hora, pronósticos extendidos a 14 días, mapas interactivos de radar, índice UV, calidad del aire y velocidad del viento. Con interfaz intuitiva, soporte para múltiples ubicaciones y actualizaciones automáticas, WeatherNow es tu compañero perfecto para planificar tu día."
   }
 ]

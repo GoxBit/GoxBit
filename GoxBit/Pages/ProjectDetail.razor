@@ -9,12 +9,11 @@
 <style>
     .project-hero-section {
         background-color: #ffffff00;
-        display: flex;
+        display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        min-height: 600px;
     }
 
     .project-hero-header {
@@ -84,7 +83,7 @@ else
     <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-8">
         <MudPaper Class="pa-6">
             <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
-            <MudText Typo="Typo.body1">@project.ShortDescription</MudText>
+            <MudText Typo="Typo.body1">@project.LongDescription</MudText>
         </MudPaper>
     </MudContainer>
 }
@@ -111,5 +110,6 @@ else
         public string DisplayName { get; set; }
         public string Image { get; set; }
         public string ShortDescription { get; set; }
+        public string LongDescription { get; set; }
     }
 }
