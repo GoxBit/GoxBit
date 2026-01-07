@@ -1,13 +1,21 @@
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
+.project-card-container {
+    width: 280px;
+}
+
+@media (max-width: 1200px) {
+    .project-card-container {
+        width: 240px;
+    }
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 16px;
+    .project-card-container {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card-container {
+        width: 100%;
     }
 }

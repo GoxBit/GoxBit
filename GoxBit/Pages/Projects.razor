@@ -2,22 +2,30 @@
 @using System.Text.Json
 @using GoxBit.Components
 @using GoxBit.Pages
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
 
-<h1>Projects</h1>
+<PageTitle>Projects</PageTitle>
 
-@if (projects == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <div class="projects-grid">
-        @foreach (var project in projects)
-        {
-            <ProjectCard Name="@project.Name" Image="@project.Image" ShortDescription="@project.ShortDescription" />
-        }
-    </div>
-}
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+    <h1>Projects</h1>
+
+    @if (projects == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+            @foreach (var project in projects)
+            {
+                <div Class="project-card-container">
+                    <ProjectCard Name="@project.Name" Image="@project.Image" ShortDescription="@project.ShortDescription" />
+                </div>
+            }
+        </div>
+    }
+</MudContainer>
 
 @code {
     private List<ProjectData> projects;
