@@ -6,32 +6,75 @@
 
 <PageTitle>@ProjectName</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
-    <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
-        Back to Projects
-    </MudButton>
+<style>
+    .project-hero-section {
+        background-color: #ffffff00;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+    }
 
-    @if (project == null)
-    {
+    .project-hero-header {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .project-image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .project-hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-title-section {
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+@if (project == null)
+{
+    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
         <MudText Typo="Typo.h6" Color="Color.Error">Project not found</MudText>
-    }
-    else
-    {
-        <div Class="project-detail-container mt-6">
-            <div Class="project-detail-header">
-                <MudText Typo="Typo.h3" Class="mb-4">@project.Name</MudText>
-                <img src="@project.Image" alt="@project.Name" class="project-detail-image" />
-            </div>
-
-            <div Class="project-detail-content mt-6">
-                <MudPaper Class="pa-6">
-                    <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
-                    <MudText Typo="Typo.body1">@project.ShortDescription</MudText>
-                </MudPaper>
-            </div>
+    </MudContainer>
+}
+else
+{
+    <div class="project-hero-section">
+        <div class="project-hero-header">
+            <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
+                Back to Projects
+            </MudButton>
         </div>
-    }
-</MudContainer>
+
+        <MudContainer MaxWidth="MaxWidth.Medium" Class="project-image-container">
+            <img src="@project.Image" alt="@project.Name" class="project-hero-image" />
+        </MudContainer>
+
+        <MudContainer MaxWidth="MaxWidth.Medium" Class="project-title-section mt-8">
+            <MudText Typo="Typo.h3" Style="color: white; font-weight: bold; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);">
+                @project.Name
+            </MudText>
+        </MudContainer>
+    </div>
+
+    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-8">
+        <MudPaper Class="pa-6">
+            <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
+            <MudText Typo="Typo.body1">@project.ShortDescription</MudText>
+        </MudPaper>
+    </MudContainer>
+}
 
 @code {
     [Parameter]
@@ -44,7 +87,7 @@
     {
         var jsonFile = File.ReadAllText("wwwroot/Projects.json");
         var allProjects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
-        
+
         // Buscar el proyecto por nombre
         project = allProjects?.FirstOrDefault(p => p.Name.Equals(Name, StringComparison.OrdinalIgnoreCase));
     }
