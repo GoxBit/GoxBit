@@ -52,6 +52,23 @@
         text-align: center;
         width: 100%;
         box-sizing: border-box;
+        max-height: 150px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .project-title-text {
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        word-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        line-height: 1.2;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
     }
 </style>
 
@@ -73,9 +90,9 @@ else
         <div class="project-image-wrapper">
             <img src="@project.Image" alt="@project.Name" class="project-hero-image" />
             <div class="project-title-overlay">
-                <MudText Typo="Typo.h3" Style="color: white; font-weight: bold; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); margin: 0;">
+                <div class="project-title-text">
                     @project.DisplayName
-                </MudText>
+                </div>
             </div>
         </div>
     </div>
