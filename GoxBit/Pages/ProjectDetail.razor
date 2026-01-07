@@ -75,7 +75,7 @@ else
             <img src="@project.Image" alt="@project.Name" class="project-hero-image" />
             <div class="project-title-overlay">
                 <MudText Typo="Typo.h3" Style="color: white; font-weight: bold; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); margin: 0;">
-                    @project.Name
+                    @project.DisplayName
                 </MudText>
             </div>
         </div>
@@ -108,6 +108,7 @@ else
     public class ProjectData
     {
         public string Name { get; set; }
+        public string DisplayName { get; set; }
         public string Image { get; set; }
         public string ShortDescription { get; set; }
     }

@@ -1,21 +1,25 @@
 [
   {
     "Name": "FinTrack",
+    "DisplayName": "Fin Track",
     "Image": "images/1080Test.png",
     "ShortDescription": "Aplicaci�n para seguimiento y an�lisis de gastos personales."
   },
   {
     "Name": "PhotoGallery",
+    "DisplayName": "Photo Gallery",
     "Image": "images/1080Test.png",
     "ShortDescription": "Galer�a de im�genes con filtros, categor�as y b�squeda."
   },
   {
     "Name": "TaskMaster",
+    "DisplayName": "Task Master",
     "Image": "images/1080Test.png",
     "ShortDescription": "Gestor de tareas con prioridades, etiquetas y recordatorios."
   },
   {
     "Name": "WeatherNow",
+    "DisplayName": "Weather Now Multiple Report Shooter Master",
     "Image": "images/1080Test.png",
     "ShortDescription": "Aplicaci�n meteorol�gica con pron�sticos en tiempo real y alertas."
   }
