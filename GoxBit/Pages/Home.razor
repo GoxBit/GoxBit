@@ -7,34 +7,107 @@
 <MudContainer MaxWidth="MaxWidth.ExtraLarge">
     <MudContainer MaxWidth="MaxWidth.Large">
 
+        @* Hero Section *@
         <MudGrid Class="py-20">
-
-            
             <MudItem xs="12" md="3" class="d-flex justify-center">
                 <MudImage Fluid="true" ObjectFit="ObjectFit.Cover" Src="images/profile.png" Alt="Mony the dog" Elevation="0" Class="rounded-lg" />
             </MudItem>
             <MudItem xs="12" md="9">
-                <MudHidden  Breakpoint="Breakpoint.SmAndUp" Invert="true">
-                    <MudText Typo="Typo.h4">
-                    Hello!
-                </MudText>
-                <MudText Typo="Typo.h5" Align="Align.Justify">
-                    I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
-                </MudText>
+                <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert="true">
+                    <MudText Typo="Typo.h4">Hello!</MudText>
+                    <MudText Typo="Typo.h5" Align="Align.Justify">
+                        I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
+                    </MudText>
                 </MudHidden>
                 <MudHidden Breakpoint="Breakpoint.Xs" Invert="true">@* monitor *@
-                    <MudText Typo="Typo.h4">
-                    Hello!
-                </MudText>
-                <MudText Typo="Typo.body1" Align="Align.Justify">
-                    I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
-                </MudText>
+                    <MudText Typo="Typo.h4">Hello!</MudText>
+                    <MudText Typo="Typo.body1" Align="Align.Justify">
+                        I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
+                    </MudText>
                 </MudHidden>
-                
             </MudItem>
         </MudGrid>
+
+        <MudDivider Class="my-8" />
+
+        @* Technical Skills Section *@
+        <MudGrid Class="py-12">
+            <MudItem xs="12">
+                <MudText Typo="Typo.h4" GutterBottom="true">Technical Skills</MudText>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" GutterBottom="true">Game Engines</MudText>
+                        <MudList T="string">
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Unreal Engine" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Unity" />
+                        </MudList>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" GutterBottom="true">3D & Graphics</MudText>
+                        <MudList T="string">
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="3D Modeling" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Character Creation" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Material Systems" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="VFX & Particles" />
+                        </MudList>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" GutterBottom="true">Tools & Software</MudText>
+                        <MudList T="string">
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Blender" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Substance Designer" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Shader Development" />
+                            <MudListItem Icon="@Icons.Material.Filled.Check" Text="Optimization" />
+                        </MudList>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+
+        <MudDivider Class="my-8" />
+
+        @* Demo Reel Section *@
+        <MudGrid Class="py-12">
+            <MudItem xs="12">
+                <MudText Typo="Typo.h4" GutterBottom="true">Demo Reel</MudText>
+                <MudText Typo="Typo.body2" Color="Color.Primary" GutterBottom="true">
+                    Check out my latest work showcasing 3D modeling, VFX, and game development expertise.
+                </MudText>
+            </MudItem>
+
+            <MudItem xs="12">
+                <MudCard>
+                        <video width="100%" height="auto" controls style="border-radius: 4px;">
+                            <source src="images/Demo.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2">
+                            A showcase of my recent projects in character design, environmental modeling, and particle effects.
+                        </MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" Link="https://www.youtube.com/YOUR_YOUTUBE_CHANNEL" Target="_blank">
+                            <MudIcon Icon="@Icons.Material.Filled.PlayArrow" Class="mr-2" />
+                            Watch on YouTube
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+
     </MudContainer>
-    <MudDivider />
-
-
 </MudContainer>
