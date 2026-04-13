@@ -2,6 +2,7 @@
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using GoxBit.Components;
+using System.Globalization;
 
 namespace GoxBit.Pages
 {
@@ -28,7 +29,12 @@ namespace GoxBit.Pages
                 {
                     Name = model.Name!,
                     Url = model.EmbedUrl!,
-                    Tools = new List<ToolType>()
+                    Tools = model.Tags?
+                        .Select(tag => TryMapTool(tag.Name))
+                        .Where(tool => tool.HasValue)
+                        .Select(tool => tool!.Value)
+                        .Distinct()
+                        .ToList() ?? new List<ToolType>()
                 })
                 .ToList() ?? new List<Model>();
 
@@ -49,6 +55,39 @@ namespace GoxBit.Pages
 
             [JsonPropertyName("embedUrl")]
             public string? EmbedUrl { get; set; }
+
+            [JsonPropertyName("tags")]
+            public List<SketchfabTag>? Tags { get; set; }
+        }
+
+        private sealed class SketchfabTag
+        {
+            [JsonPropertyName("name")]
+            public string? Name { get; set; }
+        }
+
+        private static ToolType? TryMapTool(string? rawTag)
+        {
+            if (string.IsNullOrWhiteSpace(rawTag))
+            {
+                return null;
+            }
+
+            var normalized = NormalizeTag(rawTag);
+
+            return normalized switch
+            {
+                "Max" => ToolType.Max,
+                "Zbrush" => ToolType.ZBrush,
+                "Substance Painter" => ToolType.SubstancePainter,
+                _ => null
+            };
+        }
+
+        private static string NormalizeTag(string tag)
+        {
+            var withSpaces = tag.Replace('-', ' ').Trim().ToLowerInvariant();
+            return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(withSpaces);
         }
     }
 }
