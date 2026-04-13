@@ -7,7 +7,7 @@
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
 
-    <MudCarousel Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" style="width:100%;height:600px;">
+    <MudCarousel @key="carouselRenderKey" @bind-SelectedIndex="carouselSelectedIndex" Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" style="width:100%;height:600px;">
         <NextButtonTemplate>
             <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
                 <span class="mud-icon-button-label">
