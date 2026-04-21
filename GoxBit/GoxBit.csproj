@@ -13,10 +13,6 @@
     <None Remove="Models\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Remove="wwwroot\Images\Demo.mp4" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="MudBlazor" Version="7.*" />
