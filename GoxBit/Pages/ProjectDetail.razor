@@ -1,19 +1,17 @@
 @page "/Projects/{Name}"
 @using System.Text.Json
-@using GoxBit.Pages
-@using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 
 <PageTitle>@ProjectName</PageTitle>
 
 <style>
     .project-hero-section {
-        background-color: #ffffff00;
-        display:flex;
+        background-color: transparent;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        padding: 0;
     }
 
     .project-hero-header {
@@ -74,59 +72,65 @@
 
 @if (project == null)
 {
-    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+    <div class="gb-inner-page">
         <MudText Typo="Typo.h6" Color="Color.Error">Project not found</MudText>
-    </MudContainer>
+    </div>
 }
 else
 {
-    <div class="project-hero-section">
-        <div class="project-hero-header">
-            <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
-                Back to Projects
-            </MudButton>
-        </div>
+    <div class="gb-inner-page">
+        <div class="project-hero-section">
+            <div class="project-hero-header">
+                <MudButton Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack" Href="/Projects">
+                    Back to Projects
+                </MudButton>
+            </div>
 
-        <div class="project-image-wrapper">
-            <img src="@project.Image" alt="@project.Name" class="project-hero-image" />
-            <div class="project-title-overlay">
-                <div class="project-title-text">
-                    @project.DisplayName
+            <div class="project-image-wrapper">
+                <img src="@NormalizeImage(project.Image)" alt="@project.Name" class="project-hero-image" />
+                <div class="project-title-overlay">
+                    <div class="project-title-text">
+                        @project.DisplayName
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-8 mb-8">
-        <MudPaper Class="pa-6">
+        <MudPaper Class="pa-6 mt-8" Style="background: var(--gb-surface);">
             <MudText Typo="Typo.h5" Class="mb-4">About this project</MudText>
             <MudText Typo="Typo.body1">@project.LongDescription</MudText>
         </MudPaper>
-    </MudContainer>
+    </div>
 }
 
 @code {
     [Parameter]
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
 
-    private ProjectData project;
+    private ProjectData? project;
     private string ProjectName => project?.Name ?? "Project";
 
     protected override void OnInitialized()
     {
-        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
-        var allProjects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
-
-        // Buscar el proyecto por nombre
+        var jsonFile = File.ReadAllText(Path.Combine("wwwroot", "Projects.json"));
+        var allProjects = JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
         project = allProjects?.FirstOrDefault(p => p.Name.Equals(Name, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static string NormalizeImage(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return "Images/1080Test.png";
+
+        return path.Replace("images/", "Images/", StringComparison.OrdinalIgnoreCase);
     }
 
     public class ProjectData
     {
-        public string Name { get; set; }
-        public string DisplayName { get; set; }
-        public string Image { get; set; }
-        public string ShortDescription { get; set; }
-        public string LongDescription { get; set; }
+        public string Name { get; set; } = "";
+        public string DisplayName { get; set; } = "";
+        public string Image { get; set; } = "";
+        public string ShortDescription { get; set; } = "";
+        public string LongDescription { get; set; } = "";
     }
 }

@@ -1,46 +1,54 @@
 ﻿@page "/Projects"
 @using System.Text.Json
 @using GoxBit.Components
-@using GoxBit.Pages
-@using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 
 <PageTitle>Projects</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
-    <h1>Projects</h1>
+<div class="gb-inner-page">
+    <p class="gb-kicker">Portfolio</p>
+    <h1 class="gb-page-title">Projects</h1>
 
     @if (projects == null)
     {
-        <p><em>Loading...</em></p>
+        <p class="gb-body">Loading…</p>
     }
     else
     {
-        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+        <div class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
             @foreach (var project in projects)
             {
-                <div Class="project-card-container">
-                    <ProjectCard Name="@project.Name" Image="@project.Image" ShortDescription="@project.ShortDescription" />
+                <div class="project-card-container">
+                    <ProjectCard Name="@project.Name"
+                                 Image="@NormalizeImage(project.Image)"
+                                 ShortDescription="@project.ShortDescription" />
                 </div>
             }
         </div>
     }
-</MudContainer>
+</div>
 
 @code {
-    private List<ProjectData> projects;
+    private List<ProjectData>? projects;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
-        projects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+        var jsonFile = File.ReadAllText(Path.Combine("wwwroot", "Projects.json"));
+        projects = JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+    }
+
+    private static string NormalizeImage(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return "Images/1080Test.png";
+
+        return path.Replace("images/", "Images/", StringComparison.OrdinalIgnoreCase);
     }
 
     public class ProjectData
     {
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public string ShortDescription { get; set; }
+        public string Name { get; set; } = "";
+        public string Image { get; set; } = "";
+        public string ShortDescription { get; set; } = "";
     }
 }
-
