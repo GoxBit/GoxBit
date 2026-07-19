@@ -2,41 +2,37 @@
 @using MudBlazor
 @inject NavigationManager NavigationManager
 
-<div class="header-wrapper">
-    <MudAppBar Fixed="true" Dense="false" Style="background-image:url(../images/GoxBitWeb.png)" Elevation="0" Class="py5 header header-bar">
-        <!-- Left: Logo -->
+<div class="gb-header-wrapper header-wrapper">
+    <MudAppBar Fixed="true" Dense="false" Elevation="0" Class="gb-header header header-bar">
         <div class="logo">
-            <MudLink Class="GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
+            <MudLink Class="gb-logo GoxBit" Href="/" Underline="Underline.None">GoxBit</MudLink>
         </div>
 
         <MudSpacer />
 
-        <!-- Center/Right: main navigation — visible on medium and larger screens -->
         <MudHidden Breakpoint="Breakpoint.SmAndDown">
             <div class="center-menu" role="navigation" aria-label="Primary navigation">
-                <MudGrid Spacing="1" Justify="Justify.FlexEnd" AlignItems="AlignItems.Center" Class="center-grid">
-                    <MudItem>
-                        <MudNavLink Class="custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
-                    </MudItem>
-                    <MudItem>
-                        <MudNavLink Class="custom-header-text" Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
-                    </MudItem>
-                    <MudItem>
-                        <MudNavLink Class="custom-header-text" Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
-                    </MudItem>
-                </MudGrid>
+                <div class="center-grid">
+                    <MudLink Class="gb-nav-link custom-header-text" Href="/#story" Underline="Underline.None">Story</MudLink>
+                    <MudLink Class="gb-nav-link custom-header-text" Href="/#reel" Underline="Underline.None">Reel</MudLink>
+                    <MudNavLink Class="gb-nav-link custom-header-text" Href="Projects" Match="NavLinkMatch.Prefix">Projects</MudNavLink>
+                    <MudNavLink Class="gb-nav-link custom-header-text" Href="Models" Match="NavLinkMatch.Prefix">Models</MudNavLink>
+                    <MudNavLink Class="gb-nav-link custom-header-text" Href="Background" Match="NavLinkMatch.Prefix">Background</MudNavLink>
+                    <MudLink Class="gb-cta" Href="/#work" Underline="Underline.None">Work</MudLink>
+                </div>
             </div>
         </MudHidden>
 
-        <!-- Right: hamburger for small screens -->
         <MudHidden Breakpoint="Breakpoint.MdAndUp">
             <div class="mobile-menu">
-                <MudMenu Class="hamburger-menu" 
-                        Icon="@Icons.Material.Filled.Menu" 
-                        Color="Color.Inherit" 
-                        AnchorOrigin="Origin.BottomRight"
-                        TransformOrigin="Origin.TopRight"
-                        AriaLabel="Open navigation menu">
+                <MudMenu Class="hamburger-menu"
+                         Icon="@Icons.Material.Filled.Menu"
+                         Color="Color.Inherit"
+                         AnchorOrigin="Origin.BottomRight"
+                         TransformOrigin="Origin.TopRight"
+                         AriaLabel="Open navigation menu">
+                    <MudMenuItem OnClick='() => NavigateTo("/#story")'>Story</MudMenuItem>
+                    <MudMenuItem OnClick='() => NavigateTo("/#reel")'>Reel</MudMenuItem>
                     <MudMenuItem OnClick='() => NavigateTo("/Projects")'>Projects</MudMenuItem>
                     <MudMenuItem OnClick='() => NavigateTo("/Models")'>Models</MudMenuItem>
                     <MudMenuItem OnClick='() => NavigateTo("/Background")'>Background</MudMenuItem>

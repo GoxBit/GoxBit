@@ -6,22 +6,25 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 <MudLayout>
-    <Header>
-    </Header>
- 
-    <MudMainContent Class="mt-16 pa-4" >
+    <Header />
+
+    <MudMainContent Class="gb-main">
         @Body
-</MudMainContent>
-    <MudAppBar Bottom="true" Class="d-flex align-center justify-center" Fixed="false" Style="background:#1a1a27;" Elevation="0">
-        
-            <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" />
-            <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" />
-            <MudIconButton Icon="@Icons.Custom.Brands.Reddit" Color="Color.Inherit" />
-            <MudIconButton Icon="@Icons.Custom.Brands.X" Color="Color.Inherit" />
-        
+    </MudMainContent>
+
+    <MudAppBar Bottom="true" Fixed="false" Elevation="0" Class="gb-footer">
+        <div class="gb-footer-inner">
+            <p class="gb-footer-copy">Let’s build something</p>
+            <div class="gb-footer-social">
+                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" title="GitHub" />
+                <MudIconButton Icon="@Icons.Custom.Brands.Facebook" Color="Color.Inherit" title="Facebook" />
+                <MudIconButton Icon="@Icons.Custom.Brands.Reddit" Color="Color.Inherit" title="Reddit" />
+                <MudIconButton Icon="@Icons.Custom.Brands.X" Color="Color.Inherit" title="X" />
+            </div>
+            <a class="gb-btn" href="/#reel">View reel</a>
+        </div>
     </MudAppBar>
 </MudLayout>
-
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
@@ -30,9 +33,8 @@
 </div>
 
 @code {
-    private bool _drawerOpen = true;
     private bool _isDarkMode = true;
-    private MudTheme? _theme = null;
+    private MudTheme? _theme;
 
     protected override void OnInitialized()
     {
@@ -44,17 +46,6 @@
             PaletteDark = _darkPalette,
             LayoutProperties = new LayoutProperties()
         };
-    }
-
-
-    private void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
-
-    private void DarkModeToggle()
-    {
-        _isDarkMode = !_isDarkMode;
     }
 
     private readonly PaletteLight _lightPalette = new()
@@ -73,14 +64,14 @@
         Surface = "#1e1e2d",
         Background = "#1a1a27",
         BackgroundGray = "#151521",
-        AppbarText = "#92929f",
-        AppbarBackground = "rgba(26,26,39,0.8)",
+        AppbarText = "#f5f4fa",
+        AppbarBackground = "#1e1e2d",
         DrawerBackground = "#1a1a27",
         ActionDefault = "#74718e",
         ActionDisabled = "#9999994d",
         ActionDisabledBackground = "#605f6d4d",
-        TextPrimary = "#b2b0bf",
-        TextSecondary = "#92929f",
+        TextPrimary = "#f5f4fa",
+        TextSecondary = "#b2b0bf",
         TextDisabled = "#ffffff33",
         DrawerIcon = "#92929f",
         DrawerText = "#92929f",
@@ -95,12 +86,4 @@
         Divider = "#292838",
         OverlayLight = "#1e1e2d80",
     };
-
-    public string DarkLightModeButtonIcon => _isDarkMode switch
-    {
-        true => Icons.Material.Rounded.AutoMode,
-        false => Icons.Material.Outlined.DarkMode,
-    };
 }
-
-

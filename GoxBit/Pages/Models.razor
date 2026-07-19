@@ -1,61 +1,74 @@
 ﻿@page "/Models"
 @using GoxBit.Components
-@using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 
 <PageTitle>Models</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
+<div class="gb-inner-page">
+    <p class="gb-kicker">3D art</p>
+    <h1 class="gb-page-title">Models</h1>
 
-    <MudCarousel Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" style="width:100%;height:600px;">
+    <MudCarousel Class="mud-width-full my-5" AutoCycle="false" TData="Model" ShowBullets="false" Style="width:100%;height:600px;">
         <NextButtonTemplate>
             <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
                 <span class="mud-icon-button-label">
-                    <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipNext" Color="Color.Primary"/>
+                    <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipNext" Color="Color.Primary" />
                 </span>
             </div>
         </NextButtonTemplate>
         <PreviousButtonTemplate>
-        <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
-            <span class="mud-icon-button-label">
-                <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipPrevious" Color="Color.Primary" />
-            </span>
-        </div>
-    </PreviousButtonTemplate>
+            <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
+                <span class="mud-icon-button-label">
+                    <MudIcon Class="mud-ripple mud-ripple-icon mud-icon-button-size-medium" Size="Size.Large" Icon="@Icons.Material.Filled.SkipPrevious" Color="Color.Primary" />
+                </span>
+            </div>
+        </PreviousButtonTemplate>
         <ChildContent>
             @foreach (var item in Showcase)
-        {
-            <MudCarouselItem Transition="@Transition.Fade">
-                <div class="d-flex flex-column flex-column justify-center" style="width:100%;height:600px;">
-                      <div class="sketchfab-embed-wrapper model-highlight"> <iframe title="@item.Name" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="@item.Url"></iframe> </div>
-                </div>
-            </MudCarouselItem>
-        }
-
+            {
+                <MudCarouselItem Transition="@Transition.Fade">
+                    <div class="d-flex flex-column justify-center" style="width:100%;height:600px;">
+                        <div class="sketchfab-embed-wrapper model-highlight">
+                            <iframe title="@item.Name"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    mozallowfullscreen="true"
+                                    webkitallowfullscreen="true"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                                    src="@item.Url"></iframe>
+                        </div>
+                    </div>
+                </MudCarouselItem>
+            }
         </ChildContent>
-</MudCarousel>
+    </MudCarousel>
 
-@if (!showAllModels)
+    @if (!showAllModels)
     {
         <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="@ShowModels">Show all models</MudButton>
     }
 
-@if (showAllModels)
+    @if (showAllModels)
     {
-        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
-        @foreach (var item in Showcase)
+        <div class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+            @foreach (var item in Showcase)
             {
-                <MudPaper Width="34rem ">
+                <MudPaper Width="34rem" Class="pa-2" Style="background: var(--gb-surface);">
                     <Model Name="@item.Name" Url="@item.Url" Tools="item.Tools"></Model>
-                                </MudPaper>
+                </MudPaper>
             }
         </div>
     }
-    
-</MudContainer>
+</div>
 
 <style>
-    .model-highlight{
-        height:600px;
+    .model-highlight {
+        height: 600px;
+    }
+
+    .model-highlight iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
     }
 </style>

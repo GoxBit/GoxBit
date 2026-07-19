@@ -1,0 +1,58 @@
+@using System.Text.Json
+@inject NavigationManager Navigation
+
+<section class="gb-band gb-band--surface" id="work" aria-label="Selected work">
+    <div class="gb-band__inner">
+        <div class="gb-section-head">
+            <div>
+                <p class="gb-kicker">Selected work</p>
+                <h2 class="gb-title" style="margin-bottom:0;">Projects</h2>
+            </div>
+            <a class="gb-btn gb-btn--ghost" href="Projects">All projects</a>
+        </div>
+
+        @if (projects is null)
+        {
+            <p class="gb-body">Loading…</p>
+        }
+        else
+        {
+            <div class="gb-work-grid">
+                @foreach (var project in projects.Take(3))
+                {
+                    <a class="gb-work-item" href="@($"Projects/{project.Name}")">
+                        <img src="@NormalizeImage(project.Image)" alt="@project.DisplayName" />
+                        <h3>@(string.IsNullOrWhiteSpace(project.DisplayName) ? project.Name : project.DisplayName)</h3>
+                        <p>@project.ShortDescription</p>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    private List<ProjectItem>? projects;
+
+    protected override void OnInitialized()
+    {
+        var json = File.ReadAllText(Path.Combine("wwwroot", "Projects.json"));
+        projects = JsonSerializer.Deserialize<List<ProjectItem>>(json);
+    }
+
+    private static string NormalizeImage(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return "Images/1080Test.png";
+
+        return path.Replace("images/", "Images/", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private sealed class ProjectItem
+    {
+        public string Name { get; set; } = "";
+        public string DisplayName { get; set; } = "";
+        public string Image { get; set; } = "";
+        public string ShortDescription { get; set; } = "";
+    }
+}

@@ -1,0 +1,52 @@
+@using System.Text.Json
+
+<section class="gb-band gb-band--bg" id="art" aria-label="3D art">
+    <div class="gb-band__inner">
+        <div class="gb-section-head">
+            <div>
+                <p class="gb-kicker">3D art</p>
+                <h2 class="gb-title" style="margin-bottom:0;">Models</h2>
+            </div>
+            <a class="gb-btn gb-btn--ghost" href="Models">Explore models</a>
+        </div>
+
+        @if (models is null)
+        {
+            <p class="gb-body">Loading…</p>
+        }
+        else
+        {
+            <div class="gb-art-grid">
+                @foreach (var model in models.Take(3))
+                {
+                    <a class="gb-art-item" href="Models">
+                        <div class="gb-art-item__visual">@Initials(model.Name)</div>
+                        <h3>@model.Name</h3>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    private List<ModelItem>? models;
+
+    protected override void OnInitialized()
+    {
+        var json = File.ReadAllText(Path.Combine("wwwroot", "Models.json"));
+        models = JsonSerializer.Deserialize<List<ModelItem>>(json);
+    }
+
+    private static string Initials(string name)
+    {
+        var parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return string.Concat(parts.Take(2).Select(p => char.ToUpperInvariant(p[0])));
+    }
+
+    private sealed class ModelItem
+    {
+        public string Name { get; set; } = "";
+        public string Url { get; set; } = "";
+    }
+}
