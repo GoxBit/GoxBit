@@ -1,0 +1,22 @@
+@if (!string.IsNullOrEmpty(Href))
+{
+    <a href="@Href" class="@CssClass">@ChildContent</a>
+}
+else
+{
+    <button type="button" class="@CssClass" @onclick="OnClick">@ChildContent</button>
+}
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string? Href { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Variant { get; set; } = "default";
+
+    private string CssClass => Variant switch
+    {
+        "teal" => "btn-pixel btn-pixel--teal",
+        "orange" => "btn-pixel btn-pixel--orange",
+        _ => "btn-pixel"
+    };
+}

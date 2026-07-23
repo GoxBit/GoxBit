@@ -1,40 +1,52 @@
-﻿@using Microsoft.AspNetCore.Components.Web
+﻿@using GoxBit.Components
+@using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 @page "/"
 
-<PageTitle>GoxBit</PageTitle>
+<PageTitle>GoxBit — Luis Duran</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="fade-in">
+            <h1 class="ew-title">
+                <span class="hero-title-line1">Next stop…</span>
+                <span class="hero-title-line2">GoxBit!</span>
+            </h1>
+            <p class="hero-subtitle fade-in-delay">
+                I'm <strong>Luis Duran</strong>, a multidisciplinary game developer blending art and technology.
+                Unreal Engine, Unity, 3D modeling, VFX and stylized worlds.
+            </p>
+            <div class="hero-actions fade-in-delay">
+                <PixelButton Href="/Projects" Variant="teal">View Projects</PixelButton>
+                <PixelButton Href="/Models">View Models</PixelButton>
+            </div>
+            <div class="hero-skills fade-in-delay">
+                @foreach (var skill in _skills)
+                {
+                    <span class="skill-chip">@skill</span>
+                }
+            </div>
+        </div>
+        <img src="images/profile.png" alt="Luis Duran" class="hero-profile" />
+    </div>
+</section>
+
+<section class="section-cream">
     <MudContainer MaxWidth="MaxWidth.Large">
-
-        <MudGrid Class="py-20">
-
-            
-            <MudItem xs="12" md="3" class="d-flex justify-center">
-                <MudImage Fluid="true" ObjectFit="ObjectFit.Cover" Src="images/profile.png" Alt="Mony the dog" Elevation="0" Class="rounded-lg" />
-            </MudItem>
-            <MudItem xs="12" md="9">
-                <MudHidden  Breakpoint="Breakpoint.SmAndUp" Invert="true">
-                    <MudText Typo="Typo.h4">
-                    Hello!
-                </MudText>
-                <MudText Typo="Typo.h5" Align="Align.Justify">
-                    I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
-                </MudText>
-                </MudHidden>
-                <MudHidden Breakpoint="Breakpoint.Xs" Invert="true">@* monitor *@
-                    <MudText Typo="Typo.h4">
-                    Hello!
-                </MudText>
-                <MudText Typo="Typo.body1" Align="Align.Justify">
-                    I'm <b id="Name">Luis Duran</b>, a multidisciplinary game developer driven by the fusion of art and technology. I specialize in Unreal Engine and Unity, with a strong focus on 3D modeling, stylized character and prop creation, and advanced material and particle systems. My work spans the full development cycle—from concept to final optimization—always aiming for visual impact and technical excellence across platforms. Passionate about computer graphics, I thrive on crafting immersive experiences through procedural materials, VFX, and emotionally resonant visual storytelling.
-                </MudText>
-                </MudHidden>
-                
-            </MudItem>
-        </MudGrid>
+        <h2 class="section-title ew-title">About</h2>
+        <p class="section-subtitle">
+            From concept to final optimization — visual impact and technical excellence across platforms.
+        </p>
+        <MudText Typo="Typo.body1" Style="max-width: 720px; line-height: 1.8;">
+            I specialize in stylized character and prop creation, advanced material and particle systems,
+            and immersive visual storytelling through procedural materials and VFX.
+        </MudText>
+        <div class="hero-actions" style="margin-left: 0; margin-top: 32px;">
+            <PixelButton Href="/Background" Variant="orange">My Background</PixelButton>
+        </div>
     </MudContainer>
-    <MudDivider />
+</section>
 
-
-</MudContainer>
+@code {
+    private readonly string[] _skills = ["Unreal Engine", "Unity", "3D Modeling", "Substance", "VFX", "Blender"];
+}

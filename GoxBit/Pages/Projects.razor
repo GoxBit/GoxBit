@@ -1,22 +1,24 @@
 ﻿@page "/Projects"
 @using System.Text.Json
 @using GoxBit.Components
-@using GoxBit.Pages
 @using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 
-<PageTitle>Projects</PageTitle>
+<PageTitle>Projects — GoxBit</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-10">
-    <h1>Projects</h1>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="section-cream" Style="min-height: 60vh;">
+    <div class="ew-page-header">
+        <h1 class="ew-title">Projects</h1>
+        <p>Games, tools and experiments — click a card to explore.</p>
+    </div>
 
     @if (projects == null)
     {
-        <p><em>Loading...</em></p>
+        <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
     }
     else
     {
-        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4 py-5">
+        <div Class="d-flex justify-center align-content-center flex-wrap flex-grow-1 gap-4">
             @foreach (var project in projects)
             {
                 <div Class="project-card-container">
@@ -28,19 +30,18 @@
 </MudContainer>
 
 @code {
-    private List<ProjectData> projects;
+    private List<ProjectData>? projects;
 
     protected override async Task OnInitializedAsync()
     {
-        var jsonFile = File.ReadAllText("wwwroot/Projects.json");
-        projects = System.Text.Json.JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
+        var jsonFile = await File.ReadAllTextAsync("wwwroot/Projects.json");
+        projects = JsonSerializer.Deserialize<List<ProjectData>>(jsonFile);
     }
 
     public class ProjectData
     {
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public string ShortDescription { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Image { get; set; } = string.Empty;
+        public string ShortDescription { get; set; } = string.Empty;
     }
 }
-

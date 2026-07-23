@@ -1,94 +1,56 @@
-﻿/* preserved styles (slightly formatted) */
-.custom-header-text {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 1.5px;
+﻿.custom-header-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 20px;
-    color: #0c0c0d;
-    list-style: none;
+    padding: 8px 16px;
+    color: var(--ew-text-dark, #0c0c0d);
+}
+
+.custom-header-text.mud-nav-link-active {
+    color: var(--ew-accent-teal, #4cb4af);
 }
 
 .header {
-    height: auto;
-    background-color: transparent;
-    background-size: cover;
-    background-position: bottom center;
+    background: rgba(255, 253, 229, 0.95) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgba(12, 12, 13, 0.08);
 }
 
 .GoxBit {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.5px;
     text-decoration: none;
-    padding: 10px 20px;
-    color: #0c0c0d;
-    list-style: none;
+    padding: 8px 16px;
+    color: var(--ew-text-dark, #0c0c0d);
 }
 
 .header-wrapper {
-    height: 108px;
+    height: 64px;
 }
 
 .header-bar {
     display: flex;
     align-items: center;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 12px;
 }
 
 .logo {
     z-index: 3;
 }
 
-/* Navigation menu styles */
 .center-menu {
     display: flex;
     align-items: center;
-    z-index: 2;
+    gap: 4px;
 }
 
-.center-grid {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: flex-end;
-}
-
-/* Mobile menu styles */
-.mobile-menu {
-    display: flex;
-    align-items: center;
-    z-index: 4;
-}
-
-.mobile-menu .hamburger-menu,
-.mobile-menu .mud-icon-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Responsive behavior handled by MudBlazor's MudHidden */
 @media (max-width: 768px) {
     .center-menu {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: flex;
-    }
-}
-
-@media (min-width: 769px) {
-    .center-menu {
-        display: flex;
-    }
-    .mobile-menu {
         display: none;
     }
 }
