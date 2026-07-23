@@ -1,19 +1,37 @@
 .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--ew-bg-cream, #fffde5);
+    border: 2px solid var(--ew-text-dark, #0c0c0d);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
     height: 100%;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.project-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .project-card-title {
-    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
     margin-bottom: 8px;
+    color: var(--ew-text-dark, #0c0c0d);
 }
 
 .project-card-description {
-    color: #666;
+    color: #555;
     line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.project-card ::deep .mud-card-media {
+    border-bottom: 2px solid var(--ew-text-dark, #0c0c0d);
 }

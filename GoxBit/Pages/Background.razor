@@ -1,35 +1,55 @@
 ﻿@page "/Background"
 @using MudBlazor
-<PageTitle>Timeline</PageTitle>
-<MudContainer>
-    <MudTimeline>
+
+<PageTitle>Background — GoxBit</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="section-cream" Style="min-height: 60vh;">
+    <div class="ew-page-header">
+        <h1 class="ew-title">Background</h1>
+        <p>Experience and milestones.</p>
+    </div>
+
+    <MudTimeline TimelinePosition="TimelinePosition.Start">
         <MudTimelineItem Color="Color.Primary" Size="Size.Small">
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">2017</MudText>
+                <MudText Typo="Typo.h6" Class="ew-mono" Style="color: var(--ew-accent-teal);">2017</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">Atom Towns</MudText>
-                <MudText>Construction of the town of Pripyat, one of 9 “atom towns” begins, to be inhabited by future employees of the nuclear power plants.</MudText>
+                <MudPaper Class="pa-4 timeline-card" Elevation="0">
+                    <MudText Typo="Typo.h6" GutterBottom="true">Started in game development</MudText>
+                    <MudText Typo="Typo.body2">First steps into 3D modeling and real-time engines.</MudText>
+                </MudPaper>
             </ItemContent>
         </MudTimelineItem>
         <MudTimelineItem Color="Color.Primary" Size="Size.Small">
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">2020</MudText>
+                <MudText Typo="Typo.h6" Class="ew-mono" Style="color: var(--ew-accent-teal);">2020</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">Operational</MudText>
-                <MudText>The first of the Chernobyl Nuclear Power Plants four reactors is ready to operate followed by number 2 in 1978.</MudText>
+                <MudPaper Class="pa-4 timeline-card" Elevation="0">
+                    <MudText Typo="Typo.h6" GutterBottom="true">Unreal & Unity focus</MudText>
+                    <MudText Typo="Typo.body2">Deep dive into materials, VFX and stylized asset pipelines.</MudText>
+                </MudPaper>
             </ItemContent>
         </MudTimelineItem>
         <MudTimelineItem Color="Color.Primary" Size="Size.Small">
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">2023</MudText>
+                <MudText Typo="Typo.h6" Class="ew-mono" Style="color: var(--ew-accent-teal);">2023</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">Pripyat</MudText>
-                <MudText>Pripyat officially proclaimed as a city.<br />The Chernobyl Atomic Power Station reaches its first 10 billion kilowatt-hours of electical output.</MudText>
+                <MudPaper Class="pa-4 timeline-card" Elevation="0">
+                    <MudText Typo="Typo.h6" GutterBottom="true">Multidisciplinary developer</MudText>
+                    <MudText Typo="Typo.body2">Full cycle development — concept, modeling, optimization and shipping.</MudText>
+                </MudPaper>
             </ItemContent>
         </MudTimelineItem>
     </MudTimeline>
 </MudContainer>
 
+<style>
+    .timeline-card {
+        border: 2px solid var(--ew-text-dark);
+        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+        background: #fff;
+    }
+</style>
