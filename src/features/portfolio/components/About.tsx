@@ -1,9 +1,9 @@
 import { Eyebrow, Pill, Reveal } from "@/shared/ui";
 import { ABOUT } from "../content";
 
-export function AboutStudio() {
+export function About() {
   return (
-    <section id="about-studio" className="mx-auto max-w-7xl px-6 py-20 sm:px-8">
+    <section id="about" className="mx-auto max-w-7xl px-6 py-20 sm:px-8">
       <Reveal>
         <div className="rounded-2xl border border-card-border bg-card p-8 shadow-xl sm:p-12 lg:p-14">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
@@ -23,10 +23,10 @@ export function AboutStudio() {
                   Luis Durán
                 </h3>
                 <p className="text-sm font-medium text-accent-amber">
-                  Game Developer &amp; Technical Artist
+                  Technical Designer &amp; Technical Artist
                 </p>
                 <p className="mt-0.5 text-xs text-ink-subtle">
-                  Founder of GOXBIT Studio
+                  GoxBit
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-canvas px-3 py-1.5 text-xs text-ink-muted">

@@ -1,16 +1,16 @@
 # Hi, I'm Luis Durán 👋
 
-### Technical Designer · Computer Science Engineer · Game Developer
+### Technical Designer · Technical Artist
 
-Gameplay-focused developer from **Jalisco, México** 🇲🇽. I sit at the intersection of
-**game design and engineering** — building gameplay in **Unreal Engine** (C++ & Blueprints)
+Technical Designer and Technical Artist from **Jalisco, México** 🇲🇽. I sit at the intersection of
+**game design, engineering, and art** — building gameplay and visual systems in **Unreal Engine** (C++ & Blueprints)
 on top of a solid software-architecture foundation in **C# / .NET**.
 
 - 🎮 Building games and gameplay systems in **Unreal Engine 5** (C++ & Blueprints)
 - 🧩 Software engineering with **C# / .NET**, exploring **Clean Architecture**
 - 🕹️ Learning by shipping small, focused projects — from tank arenas to FPS prototypes
 - 💬 Ask me about gameplay programming, Blueprint → C++ workflows, and modular game code
-- 📫 Open to **Technical Designer / Gameplay** opportunities
+- 📫 Open to **Technical Designer / Technical Artist** opportunities
 
 ### 🛠️ Tech I work with
 
@@ -25,7 +25,7 @@ on top of a solid software-architecture foundation in **C# / .NET**.
 | [**ToonTanks**](https://github.com/GoxBit/ToonTanks) | Arcade tank-combat game in Unreal Engine (C++). |
 | [**BPToCPP**](https://github.com/GoxBit/BPToCPP) | Porting Unreal Blueprints to C++ for structure and performance. |
 | [**rights-vault**](https://github.com/GoxBit/rights-vault) | C# service exploring a Clean Architecture, rich-entity domain. |
-| [**GoxBit**](https://github.com/GoxBit/GoxBit) | My studio portfolio site (Vite + React + TypeScript). |
+| [**GoxBit**](https://github.com/GoxBit/GoxBit) | My developer portfolio (Vite + React + TypeScript). |
 
 ### 📊 GitHub
 

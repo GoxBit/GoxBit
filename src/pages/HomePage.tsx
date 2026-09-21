@@ -1,5 +1,5 @@
 import {
-  AboutStudio,
+  About,
   ContactSection,
   CreativeLab,
   CreativeTools,
@@ -20,7 +20,7 @@ export function HomePage() {
         <CreativeTools />
         <CreativeLab />
         <Devlog />
-        <AboutStudio />
+        <About />
         <ContactSection />
       </main>
       <SiteFooter />
