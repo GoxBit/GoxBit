@@ -1,8 +1,16 @@
 # GOXBIT — Indie Studio & Tech Art Lab
 
-An interactive portfolio for **Technical Design, Game Design & Technical Art**, built as an **infinite, explorable canvas** of project nodes. Inspired by the spatial navigation of Stitch / Figma / Miro — you pan, zoom and dive into a universe of projects instead of scrolling a landing page.
+The portfolio of **Luis Durán** — Technical Designer, Technical Artist & Game Developer. A polished dark studio site (hero, featured case studies, creative tools, devlog, about, contact) with an **interactive infinite canvas** Lab as a bonus experience.
 
-> Rebuilt from the ground up with Vite + React + TypeScript. No backend, deploy-ready for Vercel / Netlify.
+The visual design faithfully follows the GOXBIT Stitch reference ("GOXBIT — Indie Studio & Tech Art Lab").
+
+> Built from the ground up with Vite + React + TypeScript. No backend, deploy-ready for Vercel / Netlify.
+
+## Routes
+
+- `/` — the studio portfolio (single-page, section-anchored navigation).
+- `/lab` — the interactive **infinite canvas** of projects (PixiJS: pan, zoom, inertia, minimap), reachable from the hero "Explore Experiments" button and the Lab section.
+- `/project/:id` — case-study detail page for a canvas project.
 
 ## Tech Stack
 
@@ -46,12 +54,18 @@ src/
     ui/            Reusable primitives (Brand, GlassPanel, IconButton, Tag, CategoryBadge)
     lib/           Framework-agnostic helpers
   features/
+    portfolio/     Studio site sections (Header, Hero, FeaturedProjects, CreativeTools,
+                   CreativeLab, Devlog, AboutStudio, Contact, Footer) + typed content
     canvas/        PixiJS engine (InfiniteCanvas, NodeView, grid) + store + React mounts
     projects/      Preview panel, filters, projects store
     shaders/       React Three Fiber ambient background
-  pages/           HomePage, ProjectDetailPage, NotFoundPage
+  pages/           HomePage (studio), LabPage (canvas), ProjectDetailPage, NotFoundPage
   data/            projects.json + StaticProjectRepository (infrastructure)
 ```
+
+The studio sections are composed from small **reusable primitives** in `shared/ui`
+(`Button`, `Icon`, `Pill`, `SectionHeader`, `Eyebrow`, `StatusBadge`, `Reveal`) and are
+driven by a typed `features/portfolio/content.ts` module, keeping copy separate from layout.
 
 ### Principles
 
@@ -63,25 +77,34 @@ src/
 
 ## The Experience
 
+**Studio site (`/`)**
+
+- Fixed header with anchored navigation and a mobile menu.
+- Hero with gradient wordmark, workshop visual and "currently crafting" chips.
+- Featured case studies led by the **Meownster** flagship card.
+- Creative tools, a lab/experiments grid, a devlog, an about card and a contact section (copy-email).
+- Scroll-reveal animations via Motion.
+
+**Interactive Lab (`/lab`)**
+
 - **Infinite canvas** — free pan, pointer-anchored zoom, inertial scrolling, world grid.
 - **Project nodes** — `idle / hover / focused` states, category color-coding, tags.
-- **Cinematic focus** — GSAP camera tweens center a node; a Motion preview panel slides in.
-- **Star map minimap** — live viewport rectangle and click-to-navigate.
-- **HUD** — zoom controls with live zoom %, reset view.
-- **Category filters** — spotlight / dim nodes by discipline.
-- **AAA case studies** — problem, solution, design pillars, challenges, learnings, media, toolchain.
+- **Cinematic focus** — GSAP camera tweens; a Motion preview panel slides in.
+- **Star map minimap** and a **HUD** with live zoom %, plus category filters.
 
-## Visual Identity
+## Visual Identity (Stitch reference)
 
 | Token | Value |
 | --- | --- |
-| Background | `#0B0F14` |
-| Primary | `#00D4FF` |
-| Accent | `#6E56CF` |
-| Success | `#00FFA3` |
-| Text | `#F5F7FA` |
+| Canvas | `#0e1117` |
+| Card | `#181e2a` |
+| Accent · Cyan | `#00d4ff` |
+| Accent · Amber | `#ff8a3d` |
+| Accent · Teal | `#2dd4bf` |
+| Ink (text) | `#e6ebf5` |
 
-Dark by default, high contrast, technical/mono accents.
+Fonts: **Space Grotesk** (display), **Plus Jakarta Sans** (body), **JetBrains Mono** (mono),
+with Material Symbols icons. Dark by default, high contrast.
 
 ## Adding a Project
 
