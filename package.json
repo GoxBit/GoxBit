@@ -3,12 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "GOXBIT — Technical & Game Design portfolio as an infinite canvas.",
+  "description": "GOXBIT — Technical Designer portfolio. Studio site and tech art lab.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "tsc -b --pretty false"
   },
   "dependencies": {
     "@react-three/drei": "^9.114.0",

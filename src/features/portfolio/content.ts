@@ -1,3 +1,4 @@
+import { envConfig } from "@/core/config/env";
 import type { Tone } from "@/shared/ui";
 
 export interface NavItem {
@@ -73,7 +74,7 @@ export const FLAGSHIP: FlagshipProject = {
     },
   ],
   pills: ["GAS (Gameplay Ability System)", "Motion Warping", "C++ & Blueprints", "Combat State Machine"],
-  cta: "Request Playable Build",
+  cta: "Get in Touch",
 };
 
 export interface SideProjectBullet {
@@ -278,8 +279,9 @@ export const ABOUT = {
 };
 
 export const CONTACT = {
-  email: "luis.duran@goxbit.com",
-  artstation: "https://artstation.com",
-  github: "https://github.com",
-  twitter: "https://twitter.com",
+  email: envConfig.email,
+  artstation: envConfig.artstation,
+  github: envConfig.github,
+  twitter: envConfig.twitter,
+  linkedin: envConfig.linkedin,
 };

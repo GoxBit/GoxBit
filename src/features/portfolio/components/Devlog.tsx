@@ -1,4 +1,4 @@
-import { Icon, Reveal, SectionHeader, TONE_TEXT } from "@/shared/ui";
+import { Reveal, SectionHeader } from "@/shared/ui";
 import { DEVLOG, type DevlogEntry } from "../content";
 
 const HOVER_TITLE: Record<DevlogEntry["tone"], string> = {
@@ -9,26 +9,20 @@ const HOVER_TITLE: Record<DevlogEntry["tone"], string> = {
 
 function DevlogCard({ entry }: { entry: DevlogEntry }) {
   return (
-    <article className="group flex flex-col justify-between space-y-5 rounded-2xl border border-card-border bg-card p-6 transition-all hover:border-card-border/90 sm:p-7">
+    <article className="group flex flex-col space-y-5 rounded-2xl border border-card-border bg-card p-6 transition-all hover:border-card-border/90 sm:p-7">
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs text-ink-subtle">
           <span>{entry.entry}</span>
           <span>{entry.label}</span>
         </div>
         <h3
-          className={`cursor-pointer font-display text-xl font-bold text-ink-text transition-colors ${HOVER_TITLE[entry.tone]}`}
+          className={`font-display text-xl font-bold text-ink-text transition-colors ${HOVER_TITLE[entry.tone]}`}
         >
           {entry.title}
         </h3>
         <p className="text-xs leading-relaxed text-ink-muted sm:text-sm">
           {entry.body}
         </p>
-      </div>
-      <div
-        className={`flex items-center gap-2 border-t border-card-border pt-3 text-xs font-medium ${TONE_TEXT[entry.tone]}`}
-      >
-        <span>Read reflection</span>
-        <Icon name="arrow_forward" className="text-[14px]" />
       </div>
     </article>
   );

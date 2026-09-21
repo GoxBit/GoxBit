@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Icon } from "@/shared/ui";
-import { NAV_ITEMS } from "../content";
+import { CONTACT, NAV_ITEMS } from "../content";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -56,7 +56,9 @@ export function SiteHeader() {
             <span>Get in Touch</span>
           </a>
           <a
-            href="#contact"
+            href={CONTACT.linkedin}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-accent-amber px-4 py-2 text-sm font-semibold text-canvas shadow-lg shadow-accent-amber/20 transition-all hover:scale-[1.02] hover:bg-accent-amber-light"
           >
             <Icon name="description" className="text-[18px]" />

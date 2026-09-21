@@ -60,6 +60,24 @@ export function ContactSection() {
           <Icon name="code" className="text-[18px]" />
           <span>GitHub</span>
         </a>
+        <a
+          href={CONTACT.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl border border-card-border bg-card px-5 py-3.5 text-sm font-semibold text-ink-text transition-all hover:border-accent-amber hover:text-accent-amber"
+        >
+          <Icon name="work" className="text-[18px]" />
+          <span>LinkedIn</span>
+        </a>
+        <a
+          href={CONTACT.twitter}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl border border-card-border bg-card px-5 py-3.5 text-sm font-semibold text-ink-text transition-all hover:border-accent-cyan hover:text-accent-cyan"
+        >
+          <Icon name="alternate_email" className="text-[18px]" />
+          <span>X</span>
+        </a>
       </div>
       <div className="pt-2 text-xs text-ink-subtle">
         Direct contact:{" "}

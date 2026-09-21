@@ -47,8 +47,12 @@ export function SiteFooter() {
               GitHub
             </a>
             <span>·</span>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-amber">
+              LinkedIn
+            </a>
+            <span>·</span>
             <a href={CONTACT.twitter} target="_blank" rel="noreferrer" className="hover:text-accent-amber">
-              Twitter / X
+              X
             </a>
             <span>·</span>
             <a href={`mailto:${CONTACT.email}`} className="hover:text-ink-text">
