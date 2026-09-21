@@ -20,7 +20,7 @@ export function LabPage() {
             className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-canvas-alt/80 px-3 py-2 font-mono text-xs uppercase tracking-widest text-ink-muted backdrop-blur transition hover:text-accent-cyan"
           >
             <Icon name="arrow_back" className="text-[16px]" />
-            Back to studio
+            Back to home
           </Link>
           <p className="mt-3 max-w-xs text-sm text-ink-muted">
             Interactive Lab — an infinite canvas of gameplay systems, shaders and

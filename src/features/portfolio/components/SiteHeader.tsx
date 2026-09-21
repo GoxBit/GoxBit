@@ -26,7 +26,7 @@ export function SiteHeader() {
               </span>
             </div>
             <span className="text-xs font-medium tracking-wide text-accent-amber">
-              Game Creator &amp; Tech Art Lab
+              Technical Designer &amp; Technical Artist
             </span>
           </div>
         </a>

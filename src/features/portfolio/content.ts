@@ -13,12 +13,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Creative Tools", href: "#creative-tools" },
   { label: "Lab & Experiments", href: "#game-lab" },
   { label: "Devlog", href: "#devlog" },
-  { label: "About", href: "#about-studio" },
+  { label: "About", href: "#about" },
 ];
 
 export const HERO = {
-  badge: "Handcrafted Game Development & Tech Art Studio",
-  roles: "Technical Designer · Technical Artist · Game Developer",
+  badge: "Technical Designer & Technical Artist",
+  roles: "Technical Designer · Technical Artist",
   description:
     "Building games, tools, technical art workflows, and gameplay systems for modern game development. Bridging software craft with game feel and artistic vision.",
   image: "/images/hero-workshop.jpg",

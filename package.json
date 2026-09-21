@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "GOXBIT — Technical Designer portfolio. Studio site and tech art lab.",
+  "description": "GOXBIT — Luis Durán. Technical Designer & Technical Artist.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

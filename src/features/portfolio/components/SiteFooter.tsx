@@ -35,7 +35,7 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-card-border/60 pt-6 text-xs text-ink-subtle sm:flex-row">
           <p>
-            © 2025 GOXBIT Studio. Built with passion for game craft, Unreal Engine &amp;
+            © 2026 GoxBit. Built with passion for game craft, Unreal Engine &amp;
             stylized worlds.
           </p>
           <div className="flex items-center gap-4">

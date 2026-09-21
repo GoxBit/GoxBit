@@ -2,7 +2,7 @@ interface BrandProps {
   tagline?: string;
 }
 
-export function Brand({ tagline = "Indie Studio · Tech Art Lab" }: BrandProps) {
+export function Brand({ tagline = "Technical Designer · Technical Artist" }: BrandProps) {
   return (
     <div className="flex items-center gap-2">
       <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary font-mono text-lg font-bold text-bg shadow-glow">

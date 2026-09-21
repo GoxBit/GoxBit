@@ -4,6 +4,6 @@ export { FeaturedProjects } from "./components/FeaturedProjects";
 export { CreativeTools } from "./components/CreativeTools";
 export { CreativeLab } from "./components/CreativeLab";
 export { Devlog } from "./components/Devlog";
-export { AboutStudio } from "./components/AboutStudio";
+export { About } from "./components/About";
 export { ContactSection } from "./components/ContactSection";
 export { SiteFooter } from "./components/SiteFooter";

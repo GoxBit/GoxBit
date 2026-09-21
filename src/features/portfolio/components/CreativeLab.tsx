@@ -74,8 +74,8 @@ export function CreativeLab() {
                 Have a Mechanic in Mind?
               </h3>
               <p className="text-xs leading-relaxed text-ink-muted">
-                I frequently build bespoke gameplay feel spikes and shader
-                prototypes for fellow indie teams and studio prototypes.
+                I frequently build bespoke gameplay-feel spikes and shader
+                prototypes for fellow indie teams.
               </p>
             </div>
             <a
