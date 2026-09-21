@@ -1,15 +1,15 @@
 import type { Category } from "./types";
 
 export const palette = {
-  bg: 0x0b0f14,
-  bgSoft: 0x0f151c,
-  bgRaised: 0x141c26,
+  bg: 0x0e1117,
+  bgSoft: 0x121620,
+  bgRaised: 0x181e2a,
   primary: 0x00d4ff,
-  accent: 0x6e56cf,
-  success: 0x00ffa3,
-  text: 0xf5f7fa,
-  textDim: 0x9ba7b4,
-  grid: 0x1b2733,
+  accent: 0xff8a3d,
+  success: 0x2dd4bf,
+  text: 0xe6ebf5,
+  textDim: 0x9ba6bc,
+  grid: 0x273144,
 } as const;
 
 export interface CategoryMeta {

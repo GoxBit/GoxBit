@@ -10,20 +10,20 @@
   html,
   body,
   #root {
-    height: 100%;
+    min-height: 100%;
   }
 
   body {
     margin: 0;
-    background-color: #0b0f14;
-    color: #f5f7fa;
-    font-family: "Inter", system-ui, sans-serif;
+    background-color: #0e1117;
+    color: #e6ebf5;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
   }
 
   ::selection {
-    background: rgba(0, 212, 255, 0.3);
+    background-color: #ff8a3d;
+    color: #0e1117;
   }
 }
 
@@ -31,25 +31,34 @@
   .h-dvh {
     height: 100dvh;
   }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
-/* Allow scrolling on inner document pages (project detail). */
-body:has(main.min-h-dvh) {
-  overflow: auto;
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f14;
+  background: #0e1117;
 }
 ::-webkit-scrollbar-thumb {
-  background: #223042;
+  background: #273144;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d4055;
+  background: #33415a;
 }
