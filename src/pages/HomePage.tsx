@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { CanvasHud, CanvasStage, Minimap } from "@/features/canvas";
 import { ProjectFilters, ProjectPreviewPanel } from "@/features/projects";
 import { ShaderBackground } from "@/features/shaders";
+import { Brand } from "@/shared/ui";
 
 export function HomePage() {
   return (
@@ -13,22 +14,11 @@ export function HomePage() {
 
       <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between p-5">
         <div className="pointer-events-auto">
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary font-mono text-lg font-bold text-bg shadow-glow">
-              G
-            </span>
-            <div>
-              <h1 className="text-lg font-bold leading-none tracking-tight">
-                GOXBIT
-              </h1>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-text-dim">
-                Technical · Game Design
-              </p>
-            </div>
-          </div>
+          <Brand />
           <p className="mt-3 max-w-xs text-sm text-text-dim">
-            An infinite canvas of game systems, shaders and tools. Drag to
-            explore, scroll to zoom, click a node to dive in.
+            An infinite canvas of game systems, shaders and tools from an indie
+            studio &amp; tech art lab. Drag to explore, scroll to zoom, click a
+            node to dive in.
           </p>
         </div>
 

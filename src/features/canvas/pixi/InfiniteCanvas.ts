@@ -2,6 +2,7 @@ import { Application, Container, FederatedPointerEvent } from "pixi.js";
 import gsap from "gsap";
 import { CANVAS_CONFIG } from "@/core/config";
 import type { Category, Project } from "@/core/types";
+import { computeCentroid } from "@/core/domain";
 import { clamp } from "@/shared/lib/math";
 import { createGrid } from "./grid";
 import { NodeView } from "./NodeView";
@@ -64,7 +65,7 @@ export class InfiniteCanvas {
       this.categoryLookup.set(project.id, project.category);
     }
 
-    const centroid = this.centroid(projects);
+    const centroid = computeCentroid(projects.map((p) => p.position));
     this.camX = centroid.x;
     this.camY = centroid.y;
 
@@ -78,15 +79,6 @@ export class InfiniteCanvas {
 
     app.ticker.add(this.tick);
     this.applyCamera();
-  }
-
-  private centroid(projects: Project[]): { x: number; y: number } {
-    if (projects.length === 0) return { x: 0, y: 0 };
-    const sum = projects.reduce(
-      (acc, p) => ({ x: acc.x + p.position.x, y: acc.y + p.position.y }),
-      { x: 0, y: 0 },
-    );
-    return { x: sum.x / projects.length, y: sum.y / projects.length };
   }
 
   private isDragging(): boolean {
@@ -198,10 +190,8 @@ export class InfiniteCanvas {
       this.nodes.get(this.focusedId)?.setState("idle");
       this.focusedId = null;
     }
-    const values = [...this.nodes.values()];
-    const centroid = values.reduce(
-      (acc, n) => ({ x: acc.x + n.x / values.length, y: acc.y + n.y / values.length }),
-      { x: 0, y: 0 },
+    const centroid = computeCentroid(
+      [...this.nodes.values()].map((n) => ({ x: n.x, y: n.y })),
     );
     this.tweenCamera({ ...centroid, zoom: CANVAS_CONFIG.defaultZoom });
   }

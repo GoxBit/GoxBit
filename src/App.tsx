@@ -13,7 +13,9 @@ const NotFoundPage = lazy(() =>
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <Suspense fallback={<div className="h-dvh bg-bg" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { projects } from "@/data/projects";
 import { CATEGORY_META } from "@/core/theme";
+import { computeBounds } from "@/core/domain";
+import { GlassPanel } from "@/shared/ui";
 import { useCanvasStore } from "../store/canvasStore";
 
 const MAP_W = 220;
@@ -9,18 +11,11 @@ const PADDING = 900;
 
 export function Minimap() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
   const bounds = useRef(
-    (() => {
-      const xs = projects.map((p) => p.position.x);
-      const ys = projects.map((p) => p.position.y);
-      return {
-        minX: Math.min(...xs) - PADDING,
-        maxX: Math.max(...xs) + PADDING,
-        minY: Math.min(...ys) - PADDING,
-        maxY: Math.max(...ys) + PADDING,
-      };
-    })(),
+    computeBounds(
+      projects.map((p) => p.position),
+      PADDING,
+    ),
   ).current;
 
   const toMap = (x: number, y: number) => ({
@@ -75,7 +70,7 @@ export function Minimap() {
   };
 
   return (
-    <div className="rounded-xl border border-white/10 bg-bg-soft/80 p-2 backdrop-blur">
+    <GlassPanel className="p-2">
       <div className="mb-1.5 px-1 font-mono text-[10px] uppercase tracking-widest text-text-dim">
         Star Map
       </div>
@@ -87,6 +82,6 @@ export function Minimap() {
         className="cursor-pointer rounded-lg"
         style={{ width: MAP_W, height: MAP_H }}
       />
-    </div>
+    </GlassPanel>
   );
 }

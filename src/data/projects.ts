@@ -1,7 +1,9 @@
-import type { Project } from "@/core/types";
-import raw from "./projects.json";
+import type { Project } from "@/core/domain";
+import { projectRepository } from "./staticProjectRepository";
 
-export const projects: Project[] = raw as Project[];
+export { projectRepository } from "./staticProjectRepository";
+
+export const projects: Project[] = projectRepository.getAll();
 
 export const projectById = (id: string): Project | undefined =>
-  projects.find((p) => p.id === id);
+  projectRepository.getById(id);

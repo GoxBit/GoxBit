@@ -1,7 +1,7 @@
 import { Container, Graphics, Text } from "pixi.js";
 import gsap from "gsap";
 import { CANVAS_CONFIG } from "@/core/config";
-import { CATEGORY_META, palette } from "@/core/theme";
+import { CATEGORY_META, palette, type CategoryMeta } from "@/core/theme";
 import type { NodeState, Project } from "@/core/types";
 
 export interface NodeCallbacks {
@@ -15,8 +15,7 @@ const hexToNumber = (hex: string): number =>
 
 export class NodeView extends Container {
   private readonly glow = new Graphics();
-  private readonly card = new Graphics();
-  private readonly meta = CATEGORY_META[this.project.category];
+  private readonly meta: CategoryMeta;
   private nodeState: NodeState = "idle";
 
   constructor(
@@ -24,6 +23,7 @@ export class NodeView extends Container {
     callbacks: NodeCallbacks,
   ) {
     super();
+    this.meta = CATEGORY_META[project.category];
     this.build();
 
     this.eventMode = "static";
@@ -39,23 +39,23 @@ export class NodeView extends Container {
     const { width: w, height: h, radius: r } = CANVAS_CONFIG.node;
 
     this.addChild(this.glow);
-    this.addChild(this.card);
 
-    this.card
-      .roundRect(-w / 2, -h / 2, w, h, r)
+    const bg = new Graphics();
+    bg.roundRect(-w / 2, -h / 2, w, h, r)
       .fill(palette.bgRaised)
       .stroke({ width: 1.5, color: 0x223042 });
+    this.addChild(bg);
 
     const thumb = new Graphics();
     thumb
       .roundRect(-w / 2 + 16, -h / 2 + 16, w - 32, 70, 10)
       .fill(hexToNumber(this.project.thumbnail));
     thumb.alpha = 0.85;
-    this.card.addChild(thumb);
+    this.addChild(thumb);
 
     const accent = new Graphics();
     accent.roundRect(-w / 2, -h / 2, 6, h, 3).fill(this.meta.color);
-    this.card.addChild(accent);
+    this.addChild(accent);
 
     const category = new Text({
       text: this.meta.label.toUpperCase(),
@@ -67,7 +67,7 @@ export class NodeView extends Container {
       },
     });
     category.position.set(-w / 2 + 16, -h / 2 + 100);
-    this.card.addChild(category);
+    this.addChild(category);
 
     const title = new Text({
       text: this.project.title,
@@ -79,7 +79,7 @@ export class NodeView extends Container {
       },
     });
     title.position.set(-w / 2 + 16, -h / 2 + 118);
-    this.card.addChild(title);
+    this.addChild(title);
 
     const tags = new Text({
       text: this.project.tags
@@ -93,7 +93,7 @@ export class NodeView extends Container {
       },
     });
     tags.position.set(-w / 2 + 16, h / 2 - 30);
-    this.card.addChild(tags);
+    this.addChild(tags);
   }
 
   setState(state: NodeState): void {
