@@ -1,0 +1,276 @@
+[
+  {
+    "id": "aether-traversal",
+    "title": "Aether Traversal",
+    "category": "game-design",
+    "year": 2025,
+    "thumbnail": "#00D4FF",
+    "summary": "Momentum-based traversal sandbox where motion is the core reward.",
+    "description": "A third-person traversal prototype exploring flow-state movement. Players chain grapples, wall-runs and air-dashes across a floating archipelago, where speed unlocks routes and rewards mastery.",
+    "tags": ["Movement", "Flow", "Sandbox", "Prototyping"],
+    "position": { "x": -1500, "y": -820 },
+    "tools": ["Unreal Engine 5", "Blueprints", "C++", "Houdini"],
+    "caseStudy": {
+      "problem": "Traversal in open sandboxes often feels like a chore between objectives instead of the fun itself.",
+      "solution": "Designed a momentum economy: every input either preserves or converts speed, so skilled routing is intrinsically rewarding without extrinsic collectibles.",
+      "challenges": [
+        "Tuning a stable momentum curve that felt fast but controllable at 60 FPS",
+        "Preventing camera nausea during high-speed chained maneuvers",
+        "Authoring readable level geometry that telegraphs optimal lines"
+      ],
+      "learnings": [
+        "Kinesthetic feedback (FOV kick, audio pitch, trails) sells speed more than raw velocity",
+        "Grey-box iteration speed matters more than fidelity for movement tuning"
+      ]
+    },
+    "gameDesign": {
+      "coreLoop": "Observe route -> build momentum -> chain traversal -> reach vista -> spot next route",
+      "playerMotivation": "Mastery and self-expression through optimized movement lines",
+      "riskReward": "Faster lines pass over lethal gaps; failure resets momentum, not progress",
+      "progression": "New verbs (dash, grapple, glide) layer combinatorially rather than linearly",
+      "replayability": "Ghost races and time trials on hand-authored and remixable tracks",
+      "technicalChallenges": "Deterministic movement for ghost replays across framerates"
+    },
+    "media": [
+      { "type": "image", "src": "#00D4FF", "caption": "Grey-box archipelago layout" },
+      { "type": "image", "src": "#6E56CF", "caption": "Momentum debug visualization" }
+    ],
+    "links": [{ "label": "Design Doc", "url": "#" }]
+  },
+  {
+    "id": "signal-forge",
+    "title": "Signal Forge",
+    "category": "systems-design",
+    "year": 2024,
+    "thumbnail": "#6E56CF",
+    "summary": "A crafting economy driven by emergent supply-and-demand simulation.",
+    "description": "Systems design for a survival-crafting title. Recipes, resources and NPC factions form a closed economy where scarcity emerges from player behavior rather than scripted spawns.",
+    "tags": ["Economy", "Simulation", "Balancing", "Systems"],
+    "position": { "x": 220, "y": -1080 },
+    "tools": ["Unity", "C#", "Machinations", "Google Sheets"],
+    "caseStudy": {
+      "problem": "Static loot tables made the mid-game economy collapse into a single dominant strategy.",
+      "solution": "Modeled a feedback-driven economy in Machinations, then ported tuned curves into a data-driven ScriptableObject pipeline for rapid balancing.",
+      "challenges": [
+        "Avoiding runaway inflation loops in the faction trade AI",
+        "Exposing enough economic signals for players to read scarcity",
+        "Keeping simulation cost under 1ms/frame for low-end targets"
+      ],
+      "learnings": [
+        "Second-order effects need telemetry dashboards, not intuition",
+        "Designers iterate 10x faster when balance lives in data, not code"
+      ]
+    },
+    "gameDesign": {
+      "coreLoop": "Gather -> refine -> trade -> invest -> unlock deeper tiers",
+      "playerMotivation": "Optimization and market mastery",
+      "riskReward": "Specializing yields profit but exposes players to demand shocks",
+      "progression": "Tech tree gates access to higher-volatility, higher-margin goods",
+      "replayability": "Procedural faction demands reshape the optimal build each run",
+      "technicalChallenges": "Deterministic economy sim with rollback for multiplayer"
+    },
+    "media": [
+      { "type": "image", "src": "#6E56CF", "caption": "Machinations economy graph" }
+    ],
+    "links": [{ "label": "Balancing Sheet", "url": "#" }]
+  },
+  {
+    "id": "lumen-weave",
+    "title": "Lumen Weave",
+    "category": "shader-experiments",
+    "year": 2025,
+    "thumbnail": "#FFD166",
+    "summary": "Volumetric, hand-painted light shafts running fully in real time.",
+    "description": "A collection of stylized lighting shaders: screen-space god rays, iridescent surfaces and animated caustics designed to feel painterly while staying performant on mid-tier GPUs.",
+    "tags": ["HLSL", "Volumetrics", "Stylized", "Optimization"],
+    "position": { "x": 1650, "y": -640 },
+    "tools": ["Unreal Material Editor", "HLSL", "RenderDoc"],
+    "caseStudy": {
+      "problem": "Physically based volumetrics were too expensive and too realistic for the target art direction.",
+      "solution": "Authored a layered noise-driven light-shaft shader with artist-facing controls, decoupling look from cost via LOD-aware sample counts.",
+      "challenges": [
+        "Temporal stability of noise under camera motion",
+        "Keeping the effect under 1.2ms at 1440p",
+        "Exposing intuitive knobs for non-technical artists"
+      ],
+      "learnings": [
+        "Blue-noise dithering fixes banding cheaper than more samples",
+        "Artist trust grows when parameters map to visual intent, not math"
+      ]
+    },
+    "media": [
+      { "type": "image", "src": "#FFD166", "caption": "God-ray layering breakdown" },
+      { "type": "image", "src": "#00FFA3", "caption": "Caustics animation frames" }
+    ],
+    "links": [{ "label": "Shader Breakdown", "url": "#" }]
+  },
+  {
+    "id": "warden-ai",
+    "title": "Warden AI",
+    "category": "technical-design",
+    "year": 2024,
+    "thumbnail": "#00FFA3",
+    "summary": "Readable stealth AI built on a transparent perception model.",
+    "description": "Technical design of a stealth encounter system: a utility-driven guard AI whose senses, alertness and search behavior are fully legible to players through diegetic feedback.",
+    "tags": ["AI", "Stealth", "Behavior Trees", "Encounter Design"],
+    "position": { "x": -820, "y": 480 },
+    "tools": ["Unreal Engine 5", "Behavior Trees", "EQS", "C++"],
+    "caseStudy": {
+      "problem": "Players felt stealth failures were unfair because guard perception was a black box.",
+      "solution": "Built a layered perception model (sight cones, hearing falloff, last-known-position) with UI and audio tells for every state transition.",
+      "challenges": [
+        "Balancing challenge with total predictability",
+        "Coordinating multi-guard search without gamey teleporting",
+        "Debugging non-deterministic AI across encounter replays"
+      ],
+      "learnings": [
+        "Telegraphing state changes turns frustration into tactical planning",
+        "EQS made search patterns feel intelligent without bespoke scripting"
+      ]
+    },
+    "gameDesign": {
+      "coreLoop": "Observe patrol -> plan route -> act -> react to alert -> reposition",
+      "playerMotivation": "Tactical mastery and the power fantasy of the ghost",
+      "riskReward": "Aggressive routes save time but raise the alert ceiling",
+      "progression": "Tools (distractions, takedowns) expand the tactical vocabulary",
+      "replayability": "Systemic guards create emergent, non-scripted encounters",
+      "technicalChallenges": "Deterministic perception for reliable QA reproduction"
+    },
+    "media": [
+      { "type": "image", "src": "#00FFA3", "caption": "Perception debug overlay" }
+    ],
+    "links": [{ "label": "System Overview", "url": "#" }]
+  },
+  {
+    "id": "forge-runes",
+    "title": "Forge Runes",
+    "category": "technical-art",
+    "year": 2023,
+    "thumbnail": "#FF7EDB",
+    "summary": "A procedural rune-inscription tool for artists, built as an editor plugin.",
+    "description": "Technical art tooling that lets artists paint glowing runes onto any mesh with animated emissive flow, packaged as a reusable Unreal editor utility.",
+    "tags": ["Tooling", "Procedural", "Pipeline", "VFX"],
+    "position": { "x": 900, "y": 620 },
+    "tools": ["Unreal Editor Utilities", "Python", "Niagara", "HLSL"],
+    "caseStudy": {
+      "problem": "Hand-placing animated runes per asset took artists days and looked inconsistent.",
+      "solution": "Built a spline-and-mask driven tool that bakes rune flow maps and auto-configures a shared material, cutting authoring time to minutes.",
+      "challenges": [
+        "UV-independent placement across arbitrary topology",
+        "Keeping baked textures within memory budget",
+        "Designing a UX artists could learn in one session"
+      ],
+      "learnings": [
+        "Great tools disappear into the artist's workflow",
+        "A tight feedback loop in-editor beats an external baking step"
+      ]
+    },
+    "media": [
+      { "type": "image", "src": "#FF7EDB", "caption": "Editor tool UI" }
+    ],
+    "links": [{ "label": "Tool Demo", "url": "#" }]
+  },
+  {
+    "id": "rift-protocol",
+    "title": "Rift Protocol",
+    "category": "unreal-engine",
+    "year": 2025,
+    "thumbnail": "#8AB4FF",
+    "summary": "Networked ability system for a 3v3 arena brawler vertical slice.",
+    "description": "A gameplay ability system (GAS) implementation for a competitive arena game: server-authoritative abilities, client prediction and rollback-friendly cooldowns.",
+    "tags": ["Multiplayer", "GAS", "Netcode", "Gameplay"],
+    "position": { "x": -1750, "y": 780 },
+    "tools": ["Unreal Engine 5", "GAS", "C++", "Replication"],
+    "caseStudy": {
+      "problem": "Ability responsiveness suffered on high-latency connections, breaking the competitive feel.",
+      "solution": "Implemented client-side prediction with server reconciliation for the ability pipeline, keeping inputs snappy while preserving authority.",
+      "challenges": [
+        "Reconciling mispredicted ability activations gracefully",
+        "Keeping cooldown state consistent under packet loss",
+        "Profiling replication bandwidth within budget"
+      ],
+      "learnings": [
+        "Prediction is a UX feature, not just a netcode detail",
+        "Deterministic ability timelines simplify reconciliation"
+      ]
+    },
+    "gameDesign": {
+      "coreLoop": "Engage -> combo abilities -> manage cooldowns -> reposition -> secure objective",
+      "playerMotivation": "Competitive expression and team synergy",
+      "riskReward": "Committing an ultimate wins fights but leaves a long vulnerability window",
+      "progression": "Ranked ladder and mastery unlocks per character",
+      "replayability": "Counterplay depth from a compact but combinatorial kit",
+      "technicalChallenges": "Lag compensation and rollback-safe ability timing"
+    },
+    "media": [
+      { "type": "image", "src": "#8AB4FF", "caption": "Ability prediction timeline" }
+    ],
+    "links": [{ "label": "Netcode Notes", "url": "#" }]
+  },
+  {
+    "id": "oracle-forge",
+    "title": "Oracle Forge",
+    "category": "ai-tooling",
+    "year": 2025,
+    "thumbnail": "#4DFFDF",
+    "summary": "An AI-assisted level-blockout copilot for rapid greyboxing.",
+    "description": "An in-editor AI tool that turns natural-language design intent into parametric blockout layouts, giving designers a fast starting point they can refine by hand.",
+    "tags": ["AI", "Tooling", "LevelDesign", "Productivity"],
+    "position": { "x": 120, "y": 1200 },
+    "tools": ["Python", "Unreal", "LLM APIs", "Editor Scripting"],
+    "caseStudy": {
+      "problem": "Blockout iteration stalled early because a blank level is intimidating and slow to fill.",
+      "solution": "Built a copilot that proposes graph-based layouts from prompts, snapping to design metrics (sightlines, pacing beats) as editable modules.",
+      "challenges": [
+        "Constraining generative output to shippable design grammar",
+        "Making suggestions editable rather than throwaway",
+        "Keeping designers in control and the AI advisory"
+      ],
+      "learnings": [
+        "AI tools win by accelerating the first draft, not replacing judgment",
+        "Design constraints as guardrails make generation trustworthy"
+      ]
+    },
+    "media": [
+      { "type": "image", "src": "#4DFFDF", "caption": "Prompt-to-blockout flow" }
+    ],
+    "links": [{ "label": "Concept Reel", "url": "#" }]
+  },
+  {
+    "id": "tempo-strike",
+    "title": "Tempo Strike",
+    "category": "gameplay-design",
+    "year": 2024,
+    "thumbnail": "#00D4FF",
+    "summary": "Rhythm-melee prototype where combat lives on the beat.",
+    "description": "A gameplay prototype fusing character-action combat with rhythm timing. Attacks land harder on-beat, turning encounters into improvised musical performances.",
+    "tags": ["Combat", "Rhythm", "Feel", "Prototype"],
+    "position": { "x": 1850, "y": 980 },
+    "tools": ["Unity", "C#", "FMOD", "DOTween"],
+    "caseStudy": {
+      "problem": "Rhythm games punish mistakes harshly; action players resented losing agency to a metronome.",
+      "solution": "Made the beat a bonus layer, not a gate: off-beat play still works, on-beat play amplifies. Forgiveness windows scale with difficulty.",
+      "challenges": [
+        "Syncing input, audio and animation within one frame of tolerance",
+        "Communicating the beat without a distracting HUD",
+        "Balancing accessibility with skill expression"
+      ],
+      "learnings": [
+        "Game feel is 90% timing windows and audio-visual confirmation",
+        "Optional depth respects both casual and expert players"
+      ]
+    },
+    "gameDesign": {
+      "coreLoop": "Read enemy tell -> strike on beat -> chain combo -> spend meter -> reset tempo",
+      "playerMotivation": "Flow, rhythm mastery and stylish expression",
+      "riskReward": "On-beat parries are high-risk, high-style, high-reward",
+      "progression": "New rhythmic verbs and tracks raise the skill ceiling",
+      "replayability": "Score-attack encounters and remixable enemy charts",
+      "technicalChallenges": "Sub-frame audio-input synchronization across devices"
+    },
+    "media": [
+      { "type": "image", "src": "#00D4FF", "caption": "Beat-timing window design" }
+    ],
+    "links": [{ "label": "Prototype Video", "url": "#" }]
+  }
+]
