@@ -1,16 +1,20 @@
 # Hi, I'm Luis Durán 👋
 
-### Technical Designer · Computer Science Engineer · Game Developer
+### Technical Designer & Technical Artist
 
-Gameplay-focused developer from **Jalisco, México** 🇲🇽. I sit at the intersection of
-**game design and engineering** — building gameplay in **Unreal Engine** (C++ & Blueprints)
+Senior developer (**C++**, **.NET**, **AWS**, **Python**) building game systems, rigging
+pipelines, and tools — from **Jalisco, México** 🇲🇽. I sit at the intersection of
+**game design and engineering**, building gameplay in **Unreal Engine** (C++ & Blueprints)
 on top of a solid software-architecture foundation in **C# / .NET**.
 
+- 🚀 **Currently shipping:** Technical Artist fundamentals → game design systems
+- 🎯 **Focus:** Rigging, Animation, Shaders, GAS, Data-driven design, Tooling
 - 🎮 Building games and gameplay systems in **Unreal Engine 5** (C++ & Blueprints)
 - 🧩 Software engineering with **C# / .NET**, exploring **Clean Architecture**
-- 🕹️ Learning by shipping small, focused projects — from tank arenas to FPS prototypes
-- 💬 Ask me about gameplay programming, Blueprint → C++ workflows, and modular game code
-- 📫 Open to **Technical Designer / Gameplay** opportunities
+- 🖼️ **Latest work:** [github.com/GoxBit/gamedev-portfolio](https://github.com/GoxBit/gamedev-portfolio)
+- 💬 Ask me about gameplay programming, rigging pipelines, Blueprint → C++ workflows, and modular game code
+- 📫 Open to **Technical Designer / Technical Artist / Gameplay** opportunities
+- 🔗 Follow on [Instagram (@gox.bit)](https://instagram.com/gox.bit) or [ArtStation (gox)](https://www.artstation.com/gox)
 
 ### 🛠️ Tech I work with
 
